@@ -501,9 +501,29 @@ module ItuCodes
   end
 	
 end
-# sample usage:
-# i = ItuCodes.new
-# i.valid_code? 8392813   # => false
-# i.valid_code? 7         # => true
-# i.parse_code 1818       # => 1
-# i.parse_code 4          # => nil
+# # ItuCodes relies on the excellent Carmen library:
+# # http://github.com/jim/carmen/tree/master
+# 
+# # sample usage:
+# 
+# ItuCodes.valid_code? 8392813   # => false
+# 
+# ItuCodes.valid_code? 7         # => true
+# 
+# ItuCodes.parse_code 1818       # => 1
+# 
+# ItuCodes.parse_code 4          # => nil
+# 
+# ItuCodes.find(995)        
+# # => [{"995"=>"Georgia"}]
+# 
+# ItuCodes.find("france")
+# # => [{"33"=>"France"}]
+# 
+# ItuCodes.find("stan")
+# # => [{"992"  =>  "Tajikistan (Republic of)"}, 
+# #    {"993"  =>  "Turkmenistan"}, 
+# #    {"7"    =>  ["Kazakhstan (Republic of)", "Russian Federation"]}, 
+# #    {"92"   =>  "Pakistan (Islamic Republic of)"}, 
+# #    {"93"   =>  "Afghanistan"}
+# #   ]
