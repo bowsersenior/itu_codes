@@ -1,13 +1,14 @@
+#TODO: use rspec
 require 'itu_codes.rb'
 require 'test/unit'
-
+ 
 class ItuCodesTest < Test::Unit::TestCase
   def test_valid_code?
     american  =    "1"
     newyorker = "1212"
     russian   =    "7"
     alien     = "alksjlkknm"
-
+ 
     assert ItuCodes.valid_code?(american)
     assert ItuCodes.valid_code?(russian)
     
@@ -23,7 +24,7 @@ class ItuCodesTest < Test::Unit::TestCase
     
     assert_equal american, ItuCodes.parse_code(american)
     assert_equal american, ItuCodes.parse_code(newyorker)
-
+ 
     assert_not_equal russian, ItuCodes.parse_code(newyorker)
     assert_not_equal russian, ItuCodes.parse_code(alien)    
     
@@ -31,8 +32,8 @@ class ItuCodesTest < Test::Unit::TestCase
     
     assert_nil ItuCodes.parse_code(alien)
   end
-
-
+ 
+ 
   def test_compatriots?
     american  =    "1"
     newyorker = "1212"
