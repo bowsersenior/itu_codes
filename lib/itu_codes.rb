@@ -424,17 +424,33 @@ module ItuCodes
   end
 	
 	def self.find_by_code(code)
-	  ItuCodes::CODE_LIST.find_all do |record|
-      record.has_code? code
-    end.map do |record|
-      record.all_names
+	  if self.valid_code? code
+  	  returner = ItuCodes::CODE_LIST.find_all do |record|
+        record.has_code? code
+      end.map do |record|
+        record.all_names
+      end.flatten.uniq
+    else
+      returner = []
     end
+    if returner.blank? or returner.size == 1
+      returner.shift 
+    else
+      returner
+    end   
   end
 
 	def self.find_by_name(name)
-	  ItuCodes::CODE_LIST.find_all do |record|
+	  returner = ItuCodes::CODE_LIST.find_all do |record|
       record.has_name? name
-    end
+    end.map do |record|
+      record.all_codes
+    end.flatten.uniq
+    if returner.blank? or returner.size == 1
+      returner.shift 
+    else
+      returner
+    end   
   end
   
   # ie. find_by_country_iso_code('US')
