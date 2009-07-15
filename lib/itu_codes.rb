@@ -5,7 +5,7 @@ require 'enumerator'
 
 # TODO: add ability to search for common names (i.e. 'USA' or 'United States of America' for 'United States')
 class OneItuCode < Object
-  attr_reader :code, :name, :subcodes
+  attr_reader :code, :name, :subcodes, :all_codes
   
   # subcodes should be an array of hashes like so:
   # subcodes = [ { :code => '1684', :name => 'American Samoa'} , { :code => '1264' , :name => "Anguilla"}]
@@ -426,6 +426,8 @@ module ItuCodes
 	def self.find_by_code(code)
 	  ItuCodes::CODE_LIST.find_all do |record|
       record.has_code? code
+    end.map do |record|
+      record.all_names
     end
   end
 
@@ -435,13 +437,14 @@ module ItuCodes
     end
   end
   
-  # ie. find_by_country_abbreviation('US')
-  def find_by_country_abbreviation(abbr)
-    ItuCodes.find_by_name( Carmen::country_name(abbr) )
+  # ie. find_by_country_iso_code('US')
+  def self.find_by_country_iso_code(iso_code)
+    ItuCodes.find_by_name( Carmen::country_name(iso_code) )
   end
   
-  def self.get_country_abbreviation(code)
-    Carmen::country_code( self.find_by_code(code).first.name )
+  # this is tricky for North American destinations: '1' can be the US, Canada or another country
+  def self.get_country_iso_code(itu_code)
+    Carmen::country_code( ItuCodes.find_by_code(itu_code).first.name ) rescue nil
   end
 	
 	def self.valid_code?(some_code)
