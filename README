@@ -30,6 +30,9 @@ ItuCodes.compatriots? 822, 811        # => false
 # the same country ...
 ItuCodes.compatriots? 122, 111        # => true
 
+# =====================================================
+# = Using 2-letter ISO country codes is most reliable =
+# =====================================================
 # ... and then there's the 
 # North American 'situation' ...
 ItuCodes.compatriots? 1264, 1818      # => false
@@ -40,6 +43,12 @@ ItuCodes.iso2itu('US')                # => "1"
 ItuCodes.itu2iso('1')
 # => ["US", "CA", "AS", "AI", "AG", "BS", "BB", "BM", "KY", "DM", "DO", "GD", "GU", "JM", "MS", "MP", "KN", "LC", "VC", "TT", "TC"]
 
+# Mexico
+# ISO 3361 code : MX
+# ITU code      : 52
 ItuCodes.iso2itu('MX')                # => "52"
 
+# Georgia
+# ISO 3361 code : GE
+# ITU code      : 995
 ItuCodes.itu2iso('995')               # => ["GE"]
