@@ -32,4 +32,14 @@ ItuCodes.compatriots? 122, 111        # => true
 
 # ... and then there's the 
 # North American 'situation' ...
-ItuCodes.compatriots? 1264, 1818      #=> false
+ItuCodes.compatriots? 1264, 1818      # => false
+
+# Convert from and to ISO 2-letter country codes:
+ItuCodes.iso2itu('US')                # => "1"
+
+ItuCodes.itu2iso('1')
+# => ["US", "CA", "AS", "AI", "AG", "BS", "BB", "BM", "KY", "DM", "DO", "GD", "GU", "JM", "MS", "MP", "KN", "LC", "VC", "TT", "TC"]
+
+ItuCodes.iso2itu('MX')                # => "52"
+
+ItuCodes.itu2iso('995')               # => ["GE"]

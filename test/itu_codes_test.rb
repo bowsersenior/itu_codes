@@ -93,10 +93,14 @@ class ItuCodesTest < ActiveSupport::TestCase
   end
 
   test "should convert from ISO 2-letter code to ITU code" do
-    assert_equal( '1', ItuCodes.iso2itu('US') )
+    assert_equal( '1',  ItuCodes.iso2itu('US') )
+    assert_equal( '52', ItuCodes.iso2itu('MX') )
   end
 
   test "should convert from ITU code to ISO 2-letter code" do
     assert( ItuCodes.itu2iso('1').include?('US') )    
+    assert( ItuCodes.itu2iso('7').include?('RU') )
+    assert( ItuCodes.itu2iso('7').include?('KZ') )    
+    assert( ItuCodes.itu2iso('995').include?('GE') )    
   end
 end
