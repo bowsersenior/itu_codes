@@ -3,24 +3,33 @@
 
 # sample usage:
 
-ItuCodes.valid_code? 8392813   # => false
+ItuCodes.valid_code? 8392813          # => false
 
-ItuCodes.valid_code? 7         # => true
+ItuCodes.valid_code? 7                # => true
 
-ItuCodes.parse_code 1818       # => 1
+ItuCodes.parse_code 1818              # => 1
 
-ItuCodes.parse_code 4          # => nil
+ItuCodes.parse_code 822               # => "82"
 
-ItuCodes.find(995)        
-# => [{"995"=>"Georgia"}]
+ItuCodes.parse_code 4                 # => nil
 
-ItuCodes.find("france")
-# => [{"33"=>"France"}]
+ItuCodes.find("France")               # => "33"
 
-ItuCodes.find("stan")
-# => [{"992"  =>  "Tajikistan (Republic of)"}, 
-#    {"993"  =>  "Turkmenistan"}, 
-#    {"7"    =>  ["Kazakhstan (Republic of)", "Russian Federation"]}, 
-#    {"92"   =>  "Pakistan (Islamic Republic of)"}, 
-#    {"93"   =>  "Afghanistan"}
-#   ]
+ItuCodes.find("995")                  # => "Georgia"
+
+ItuCodes.find("Erewhon")              # => nil
+
+ItuCodes.find("123123995")            # => nil
+
+# Despite the same 1st digit, 
+# these are for different 
+# countries ...
+ItuCodes.compatriots? 822, 811        # => false
+
+# ... but these are for 
+# the same country ...
+ItuCodes.compatriots? 122, 111        # => true
+
+# ... and then there's the 
+# North American 'situation' ...
+ItuCodes.compatriots? 1264, 1818      #=> false
