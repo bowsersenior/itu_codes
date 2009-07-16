@@ -483,13 +483,15 @@ module ItuCodes
   end
   
   # ie. find_by_country_iso_code('US')
-  def self.find_by_country_iso_code(iso_code)
+  def self.iso2itu(iso_code)
     ItuCodes.find_by_name( Carmen::country_name(iso_code) )
   end
   
   # this is tricky for North American destinations: '1' can be the US, Canada or another country
-  def self.get_country_iso_code(itu_code)
-    Carmen::country_code( ItuCodes.find_by_code(itu_code).first.name ) rescue nil
+  def self.itu2iso(itu_code)
+    ItuCodes.lookup(itu_code).map do |country|
+      Carmen::country_code( country ) rescue nil
+    end.compact
   end
 	
 	# returns true for any valid ITU code
