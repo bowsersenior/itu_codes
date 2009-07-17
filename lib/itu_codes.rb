@@ -457,7 +457,9 @@ module ItuCodes
   
   # ie. find_by_country_iso_code('US')
   def self.iso2itu(iso_code)
-    ItuCodes.find_by_name( Carmen::country_name(iso_code) )
+    ItuCodes.find_by_name( Carmen::country_name(iso_code) ).reject do |c|   
+      north_american?(c) and c.length > 1
+    end.shift rescue nil
   end
   
   # this is tricky for North American destinations: '1' can be the US, Canada or another country
