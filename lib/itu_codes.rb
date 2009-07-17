@@ -4,33 +4,6 @@
 require 'enumerator'
 
 # TODO: add ability to search for common names (i.e. 'USA' or 'United States of America' for 'United States')
-class OneItuCode < Object
-  attr_reader :code, :name, :subcodes, :all_codes
-  
-  # subcodes should be an array of hashes like so:
-  # subcodes = [ { :code =>	'1684', :name =>	'American Samoa'} , { :code =>	'1264' , :name =>	"Anguilla"}]
-  def initialize(code, name, subcodes=[])
-    @code = code
-    @name = name
-    @subcodes = subcodes
-  end
-  
-  def all_names
-    [@name] + @subcodes.map{ |s| s[:name] }
-  end
-  
-  def all_codes
-    [@code] + @subcodes.map{ |s| s[:code] }    
-  end
-  
-  def has_name?(name)
-    self.all_names.include? name
-  end
-  
-  def has_code?(code)
-    self.all_codes.include? code
-  end
-end
 
 module ItuCodes
   include Carmen
