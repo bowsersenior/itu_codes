@@ -2,7 +2,7 @@
 # 1 --> Non-US need to be separated by area code
 # 7 --> Kazakhstan!
 require 'enumerator'
-require 'carmen/lib/carmen.rb'
+require 'carmen'
 
 # TODO: add ability to search for common names (i.e. 'USA' or 'United States of America' for 'United States')
 

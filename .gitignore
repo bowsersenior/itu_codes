@@ -1,0 +1,6 @@
+.DS_STORE
+not_for_git/*
+tmp/*
+*.gem
+.bundle
+Gemfile.lock
