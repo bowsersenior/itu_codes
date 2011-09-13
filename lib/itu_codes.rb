@@ -400,8 +400,8 @@ module ItuCodes
     { "1"     =>  "Bermuda" },
     { "1441"  =>  "Bermuda" },
 
-    { "1"     =>  "British Virgin Islands" },
-    { "1284"  =>  "British Virgin Islands" },
+    { "1"     =>  "Virgin Islands, British" },
+    { "1284"  =>  "Virgin Islands, British" },
 
     { "1"     =>  "Cayman Islands" },
     { "1345"  =>  "Cayman Islands" },
