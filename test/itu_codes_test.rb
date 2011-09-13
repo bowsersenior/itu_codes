@@ -92,6 +92,14 @@ class ItuCodesTest < ActiveSupport::TestCase
     assert( ! ItuCodes.american?(russian)   )
   end
 
+  test "should detect us numbers" do
+    newyorker = "1212"
+    canadian  = "1250"
+
+    assert(ItuCodes.us?(newyorker))
+    assert(! ItuCodes.american?(canadian))
+  end
+
   test "should convert from ISO 2-letter code to ITU code" do
     assert_equal( '1',  ItuCodes.iso2itu('US') )
     assert_equal( '1',  ItuCodes.iso2itu('CA') )    

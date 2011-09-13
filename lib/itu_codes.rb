@@ -862,6 +862,18 @@ module ItuCodes
     north_american?(some_code) and (countries.include?('United States') or countries.empty?)
   end
   
+  def self.us?(some_code)
+    some_code = some_code.to_s
+    countries = lookup(some_code[0,4])
+    north_american?(some_code) and (countries.include?('United States'))
+  end
+
+  def self.canadian?(some_code)
+    some_code = some_code.to_s
+    countries = lookup(some_code[0,4])
+    north_american?(some_code) and (countries.include?('Canada'))
+  end
+
   # converts input to string, then strips any non-numeric characters
   def self.clean(input)
     input.to_s.gsub(/[^0-9]/, '')
