@@ -412,6 +412,7 @@ module ItuCodes
     { "1"     =>  "Dominican Republic" },
     { "1809"  =>  "Dominican Republic" },
     { "1829"  =>  "Dominican Republic" },
+    { "1849"  =>  "Dominican Republic" },
 
     { "1"     =>  "Grenada" },
     { "1473"  =>  "Grenada" },
@@ -427,6 +428,10 @@ module ItuCodes
 
     { "1"     =>  "Northern Mariana Islands" },
     { "1670"  =>  "Northern Mariana Islands" },
+
+    { "1"     =>   "Puerto Rico" },
+    { "1787"   =>  "Puerto Rico" },
+    { "1939"   =>  "Puerto Rico" },
 
     { "1"     =>  "Saint Kitts and Nevis" },
     { "1869"  =>  "Saint Kitts and Nevis" },
