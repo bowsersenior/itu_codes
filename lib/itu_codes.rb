@@ -448,8 +448,8 @@ module ItuCodes
     { "1"     =>  "Turks and Caicos Islands" },
     { "1649"  =>  "Turks and Caicos Islands" },
 
-    { "1"     =>  "United States Virgin Islands" },
-    { "1340"  =>  "United States Virgin Islands" },
+    { "1"     =>  "Virgin Islands, U.S." },
+    { "1340"  =>  "Virgin Islands, U.S." },
     
     {"20"     =>      "Egypt"},
     {"210"    =>      "Spare code"},
@@ -489,7 +489,7 @@ module ItuCodes
     {"244"    =>      "Angola"},
     {"245"    =>      "Guinea-Bissau"},
     {"246"    =>      "Diego Garcia"},
-    {"247"    =>      "Ascension"},
+    {"247"    =>      "Ascension Island"},
     {"248"    =>      "Seychelles"},
     {"249"    =>      "Sudan"},
     {"250"    =>      "Rwanda"},
@@ -559,7 +559,7 @@ module ItuCodes
     {"376"    =>      "Andorra"},
     {"377"    =>      "Monaco"},
     {"378"    =>      "San Marino"},
-    {"379"    =>      "Holy See (Vatican City State},"},
+    {"379"    =>      "Holy See (Vatican City State)"},
     {"380"    =>      "Ukraine"},
     {"381"    =>      "Serbia and Montenegro"},
     {"382"    =>      "Spare code"},
