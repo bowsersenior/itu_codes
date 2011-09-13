@@ -851,15 +851,17 @@ module ItuCodes
     both_valid and ( parse_code(some) == parse_code(other) ) rescue nil
   end
 
+  # def self.american?(some_code)
+  #   # for non-US North American codes, parse_code will return a 4 digit code
+  #   # for US, '1' will be returned
+  #   some_code = some_code.to_s
+  #   countries = lookup(some_code[0,4])
+  #   north_american?(some_code) and (countries.include?('United States') or countries.empty?)
+  # end
+
   def self.american?(some_code)
     # for non-US North American codes, parse_code will return a 4 digit code
     # for US, '1' will be returned
-    some_code = some_code.to_s
-    countries = lookup(some_code[0,4])
-    north_american?(some_code) and (countries.include?('United States') or countries.empty?)
-  end
-
-  def self.us?(some_code)
     some_code = some_code.to_s
     countries = lookup(some_code[0,4])
     north_american?(some_code) and (countries.include?('United States'))

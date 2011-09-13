@@ -96,7 +96,7 @@ class ItuCodesTest < ActiveSupport::TestCase
     newyorker = "1212"
     canadian  = "1250"
 
-    assert(ItuCodes.us?(newyorker))
+    assert(ItuCodes.american?(newyorker))
     assert(! ItuCodes.american?(canadian))
   end
 
