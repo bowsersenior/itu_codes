@@ -798,7 +798,7 @@ module ItuCodes
   
   # ie. find_by_country_iso_code('US')
   def self.iso2itu(iso_code)
-    ItuCodes.find_by_name( Carmen::country_name(iso_code) ).reject do |c|   
+    [ItuCodes.find_by_name( Carmen::country_name(iso_code) )].flatten.reject do |c|   
       north_american?(c) and c.length > 1
     end.shift rescue nil
   end
