@@ -206,7 +206,6 @@ module ItuCodes
     { "1662"  =>  "United States" },
     { "1667"  =>  "United States" },
     { "1669"  =>  "United States" },
-    { "1671"  =>  "United States" },
     { "1678"  =>  "United States" },
     { "1679"  =>  "United States" },
     { "1681"  =>  "United States" },
