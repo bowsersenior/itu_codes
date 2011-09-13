@@ -652,7 +652,8 @@ module ItuCodes
     {"699"    =>      "Spare code"},
 
     {"7"      =>      "Russian Federation"},
-    {"7"      =>      "Kazakhstan"},
+    {"76"     =>      "Kazakhstan"},
+    {"77"     =>      "Kazakhstan"},
     
     {"800"    =>      "International Freephone Service"},
     {"801"    =>      "Spare code"},
