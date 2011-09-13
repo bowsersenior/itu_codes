@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
   s.add_dependency "i18n"  
   s.add_dependency "carmen"
   s.add_dependency "activesupport"  
+  s.add_development_dependency('rake')
   
   
   s.files        = Dir.glob("{bin,lib}/**/*") + %w(MIT-LICENSE README)
