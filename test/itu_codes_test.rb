@@ -1,12 +1,7 @@
 require 'test_helper'
 
-class ItuCodesTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  test "the truth" do
-    assert true
-  end
-
-  test "calling code is valid" do
+class ItuCodesTest < MiniTest::Unit::TestCase
+  def test_calling_code_is_valid
     american  =    "1"
     newyorker = "1212"
     canadian  = "1250"
@@ -23,7 +18,7 @@ class ItuCodesTest < ActiveSupport::TestCase
     assert ! ItuCodes.valid_code?(alien)
   end
 
-  test "parse full number into correct calling codes" do
+  def test_parse_full_number_into_correct_calling_codes
     american  =    "1"
     newyorker = "1212"
     russian   =    "7"
@@ -32,16 +27,16 @@ class ItuCodesTest < ActiveSupport::TestCase
     assert_equal american, ItuCodes.parse_code(american)
     assert_equal american, ItuCodes.parse_code(newyorker)
 
-    assert_not_equal russian, ItuCodes.parse_code(newyorker)
-    assert_not_equal russian, ItuCodes.parse_code(alien)
+    refute_equal russian, ItuCodes.parse_code(newyorker)
+    refute_equal russian, ItuCodes.parse_code(alien)
 
-    assert_not_equal alien, ItuCodes.parse_code(alien)
+    refute_equal alien, ItuCodes.parse_code(alien)
 
     assert_nil ItuCodes.parse_code(alien)
   end
 
 
-  test "compatriot phone numbers should be detected" do
+  def test_compatriot_phone_numbers_should_be_detected
     american  =    "1"
     newyorker = "1212"
     angeleno  = "1818"
@@ -58,7 +53,7 @@ class ItuCodesTest < ActiveSupport::TestCase
     assert ! ItuCodes.compatriots?(alien, alien)
   end
 
-  test "find should return correct result" do
+  def test_find_should_return_correct_result
     assert_equal( "995", ItuCodes.find("Georgia") )
     assert_equal( "Georgia", ItuCodes.find(995) )
     assert_equal( "Georgia", ItuCodes.find("995") )
@@ -66,7 +61,7 @@ class ItuCodesTest < ActiveSupport::TestCase
     assert_equal( nil, ItuCodes.find("someverylongandnonterritorialstring") )
   end
 
-  test "should deal gracefully with North America" do
+  def test_should_deal_gracefully_with_North_America
     assert_equal( "American Samoa", ItuCodes.find(1684) )
     assert_equal( "Canada"        , ItuCodes.find(1250) )
     assert_equal( "United States" , ItuCodes.find(1818) )
@@ -76,7 +71,7 @@ class ItuCodesTest < ActiveSupport::TestCase
     assert ItuCodes.find('1').include?("American Samoa")
   end
 
-  test "should detect american numbers" do
+  def test_should_detect_american_numbers
     american  =    "1"
     newyorker = "1212"
     n2        = "121232"
@@ -92,7 +87,7 @@ class ItuCodesTest < ActiveSupport::TestCase
     assert( ! ItuCodes.american?(russian)   )
   end
 
-  test "should detect us numbers" do
+  def test_should_detect_us_numbers
     newyorker = "1212"
     canadian  = "1250"
 
@@ -100,14 +95,14 @@ class ItuCodesTest < ActiveSupport::TestCase
     assert(! ItuCodes.american?(canadian))
   end
 
-  test "should convert from ISO 2-letter code to ITU code" do
+  def test_should_convert_from_ISO_2_letter_code_to_ITU_code
     assert_equal( '1',  ItuCodes.iso2itu('US') )
     assert_equal( '1',  ItuCodes.iso2itu('CA') )
     assert_nil( ItuCodes.iso2itu('not_an_iso_code') )
     assert_equal( '52', ItuCodes.iso2itu('MX') )
   end
 
-  test "should convert from ITU code to ISO 2-letter code" do
+  def test_should_convert_from_ITU_code_to_ISO_2_letter_code
     assert( ItuCodes.itu2iso('1').include?('US') )
     assert( ItuCodes.itu2iso('7').include?('RU') )
     assert( ItuCodes.itu2iso('7').include?('KZ') )
