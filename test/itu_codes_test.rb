@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ItuCodesTest < MiniTest::Unit::TestCase
+class ItuCodesTest < TEST_CASE_CLASS
   def test_calling_code_is_valid
     american  =    "1"
     newyorker = "1212"
