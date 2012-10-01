@@ -20,6 +20,6 @@ Gem::Specification.new do |s|
   s.add_dependency "carmen"
   s.add_development_dependency('rake')
 
-  s.files        = Dir.glob("{bin,lib}/**/*") + %w(MIT-LICENSE README)
+  s.files        = Dir.glob("{bin,lib}/**/*") + %w(MIT-LICENSE README.md)
   s.require_path = 'lib'
 end
