@@ -1,11 +1,11 @@
 # ItuCodes [![Build Status](https://secure.travis-ci.org/bowsersenior/itu_codes.png)](http://travis-ci.org/bowsersenior/itu_codes)
 
-Helper library for telephone country codes based on the official International Telecommunications Union specifications.
+Helper library for telephone country codes based on the official International Telecommunications Union specifications:
 
-    # ItuCodes relies on the excellent Carmen library:
-    # http://github.com/jim/carmen/tree/master
+* [LIST OF MOBILE COUNTRY OR GEOGRAPHICAL AREA CODES][1]
+* [LIST OF ITU-T RECOMMENDATION E.164 ASSIGNED COUNTRY CODES (POSITION ON 1 NOVEMBER 2011)][2]
 
-    # sample usage:
+## Usage:
 
     ItuCodes.valid_code? 8392813          # => false
 
@@ -56,3 +56,6 @@ Helper library for telephone country codes based on the official International T
     # ISO 3361 code : GE
     # ITU code      : 995
     ItuCodes.itu2iso('995')               # => ["GE"]
+
+[1]: http://www.itu.int/itudoc/itu-t/ob-lists/icc/e212_685.pdf
+[2]: http://www.itu.int/dms_pub/itu-t/opb/sp/T-SP-E.164D-11-2011-PDF-E.pdf
