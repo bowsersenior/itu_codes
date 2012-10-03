@@ -79,14 +79,6 @@ class ItuCodesTest < TEST_CASE_CLASS
     refute ItuCodes.american?(russian)
   end
 
-  def test_should_detect_us_numbers
-    newyorker = "1212"
-    canadian  = "1250"
-
-    assert ItuCodes.american?(newyorker)
-    refute ItuCodes.american?(canadian)
-  end
-
   def test_should_convert_from_ISO_3166_code_to_ITU_code
     assert_equal( '1',  ItuCodes.iso2itu('US') )
     assert_equal( '1',  ItuCodes.iso2itu('CA') )

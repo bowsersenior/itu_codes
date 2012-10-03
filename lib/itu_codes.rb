@@ -14,17 +14,24 @@ module ItuCodes
       returner = lookup(code)
 
       if returner.size <= 1
-        returner.shift
+        returner.first
       else
         returner
       end
     end
 
     def find_by_name(name)
-      returner = list.find_all do |record|
-        record.has_value? name
-      end.map{ |k| k.keys.first }.uniq
-      returner.size <= 1 ? returner.shift : returner
+      matching = country_codes.select do |k, v|
+        [*v].include? name
+      end || {}
+
+      returner = matching.keys
+
+      if returner.size <= 1
+        returner.first
+      else
+        returner
+      end
     end
 
     # lookup by ISO 3166 country code
@@ -32,19 +39,14 @@ module ItuCodes
     # see : http://www.iso.org/iso/country_codes.htm
     def iso2itu(iso_code)
       country_name = Helpers.country_name_lookup(iso_code)
-
-      matching = country_codes.find do |arr|
-        arr.values.last == country_name
-      end || {}
-
-      matching.keys.first
+      find_by_name(country_name)
     end
 
     # returns true for any valid ITU code
     # valid_code?(1)    => true
     # valid_code?(1818) => false
     def valid_code?(some_code)
-      country_codes.any? { |hsh| hsh.has_key?(some_code) }
+      country_codes[some_code]
     end
 
     def north_american?(some_code)
@@ -88,8 +90,8 @@ module ItuCodes
 
     private
 
-    def list
-      Constants::ASSIGNED_COUNTRY_CODES + Constants::NORTH_AMERICAN_AREA_CODES
+    def north_american_codes
+      Constants::NORTH_AMERICAN_AREA_CODES
     end
 
     def country_codes
@@ -98,9 +100,13 @@ module ItuCodes
 
     def lookup(code)
       cleaned = clean(code)
-      list.find_all{ |hsh| hsh.keys.first == cleaned }.map do |k|
-        k.values.first
-      end.uniq
+      matching_countries = country_codes[cleaned] || []
+
+      matching_north_americans = north_american_codes.select do |k, v|
+        [*v].include?(code)
+      end || {}
+
+      [*matching_countries] + matching_north_americans.keys.compact
     end
 
     # converts input to string, then strips any non-numeric characters
