@@ -12,7 +12,7 @@ module ItuCodes
   class << self
 
     def list
-      Constants::ASSIGNED_COUNTRY_CODES
+      Constants::ASSIGNED_COUNTRY_CODES + Constants::NORTH_AMERICAN_AREA_CODES
     end
 
     def lookup(code)
