@@ -3,5 +3,6 @@ require 'bundler'
 Bundler.setup
 
 require 'itu_codes'
+require_relative 'tmf'
 
-require 'minitest/autorun'
+include TMF

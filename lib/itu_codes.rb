@@ -46,7 +46,7 @@ module ItuCodes
     # valid_code?(1)    => true
     # valid_code?(1818) => false
     def valid_code?(some_code)
-      country_codes[some_code]
+      country_codes.has_key?(some_code)
     end
 
     def north_american?(some_code)
