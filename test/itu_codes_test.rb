@@ -1,88 +1,95 @@
-require 'test_helper'
+require_relative 'test_helper'
 
-class ItuCodesTest < MiniTest::Unit::TestCase
-  def test_calling_code_is_valid
-    american  =    "1"
-    newyorker = "1212"
-    canadian  = "1250"
-    samoan    = "1684"
-    russian   =    "7"
-    alien     = "alksjlkknm"
+lambda do
+  # test calling code is valid
+  american  =    "1"
+  newyorker = "1212"
+  canadian  = "1250"
+  samoan    = "1684"
+  russian   =    "7"
+  alien     = "alksjlkknm"
 
-    assert ItuCodes.valid_code?(american)
-    assert ItuCodes.valid_code?(russian)
+  assert ItuCodes.valid_code?(american), :== => true
+  assert ItuCodes.valid_code?(russian), :== => true
 
-    refute ItuCodes.valid_code?(newyorker)     # 1212 is not a country code!
-    refute ItuCodes.valid_code?(canadian)
-    refute ItuCodes.valid_code?(samoan)
-    refute ItuCodes.valid_code?(alien)
-  end
+  assert ItuCodes.valid_code?(newyorker), :!= => true     # 1212 is not a country code!
+  assert ItuCodes.valid_code?(canadian), :!= => true
+  assert ItuCodes.valid_code?(samoan), :!= => true
+  assert ItuCodes.valid_code?(alien), :!= => true
+end.call
 
-  def test_parse_full_number_into_correct_calling_codes
-    american  =    "1"
-    newyorker = "1212"
-    russian   =    "7"
-    alien     = "alksjlkknm"
+lambda do
+  # test parse full number into correct calling codes
+  american  =    "1"
+  newyorker = "1212"
+  russian   =    "7"
+  alien     = "alksjlkknm"
 
-    assert_equal american, ItuCodes.parse_code(american)
-    assert_equal american, ItuCodes.parse_code(newyorker)
+  assert american,
+    :== => ItuCodes.parse_code(american),
+    :== => ItuCodes.parse_code(newyorker)
 
-    refute_equal russian, ItuCodes.parse_code(newyorker)
-    refute_equal russian, ItuCodes.parse_code(alien)
+  assert russian,
+    :!= => ItuCodes.parse_code(newyorker),
+    :!= => ItuCodes.parse_code(alien)
 
-    refute_equal alien, ItuCodes.parse_code(alien)
+  assert alien, :!= => ItuCodes.parse_code(alien)
 
-    assert_nil ItuCodes.parse_code(alien)
-  end
+  assert nil, :== => ItuCodes.parse_code(alien)
+end.call
 
+lambda do
+  # test compatriot phone numbers should be detected
+  american  =    "1"
+  newyorker = "1212"
+  angeleno  = "1818"
+  russian   =    "7"
+  alien     = "alksjlkknm"
 
-  def test_compatriot_phone_numbers_should_be_detected
-    american  =    "1"
-    newyorker = "1212"
-    angeleno  = "1818"
-    russian   =    "7"
-    alien     = "alksjlkknm"
+  assert ItuCodes.compatriots?(newyorker, angeleno), :== => true
+  assert ItuCodes.compatriots?(newyorker, american), :== => true
 
-    assert ItuCodes.compatriots?(newyorker, angeleno)
-    assert ItuCodes.compatriots?(newyorker, american)
+  assert ItuCodes.compatriots?(newyorker, russian), :!= => true
+  assert ItuCodes.compatriots?(american, russian), :!= => true
 
-    refute ItuCodes.compatriots?(newyorker, russian)
-    refute ItuCodes.compatriots?(american, russian)
+  assert ItuCodes.compatriots?(american, alien), :!= => true
+  assert ItuCodes.compatriots?(alien, alien), :!= => true
+end.call
 
-    refute ItuCodes.compatriots?(american, alien)
-    refute ItuCodes.compatriots?(alien, alien)
-  end
+lambda do
+  # test should deal gracefully with North America
+  assert ItuCodes.find_by_itu_code('1684'), :== => "American Samoa"
+  assert ItuCodes.find_by_itu_code('1250'), :== => "Canada"
+  assert ItuCodes.find_by_itu_code('1818'), :== => "United States"
 
-  def test_should_deal_gracefully_with_North_America
-    assert_equal( "American Samoa", ItuCodes.find_by_itu_code('1684') )
-    assert_equal( "Canada"        , ItuCodes.find_by_itu_code('1250') )
-    assert_equal( "United States" , ItuCodes.find_by_itu_code('1818') )
+  assert ItuCodes.find_by_itu_code('1'), :include? => "United States"
+  assert ItuCodes.find_by_itu_code('1'), :include? => "Canada"
+  assert ItuCodes.find_by_itu_code('1'), :include? => "American Samoa"
+end.call
 
-    assert ItuCodes.find_by_itu_code('1').include?("United States")
-    assert ItuCodes.find_by_itu_code('1').include?("Canada")
-    assert ItuCodes.find_by_itu_code('1').include?("American Samoa")
-  end
+lambda do
+  # test should detect american numbers
+  american  = "1"
+  newyorker = "1212"
+  n2        = "121232"
+  canadian  = "1250"
+  samoan    = "1684"
+  russian   = "7"
 
-  def test_should_detect_american_numbers
-    american  = "1"
-    newyorker = "1212"
-    n2        = "121232"
-    canadian  = "1250"
-    samoan    = "1684"
-    russian   = "7"
+  assert ItuCodes,
+    :american? => american,
+    :american? => newyorker,
+    :american? => n2
 
-    assert ItuCodes.american?(american)
-    assert ItuCodes.american?(newyorker)
-    assert ItuCodes.american?(n2)
-    refute ItuCodes.american?(canadian)
-    refute ItuCodes.american?(samoan)
-    refute ItuCodes.american?(russian)
-  end
+  assert ItuCodes.american?(canadian), :!= => true
+  assert ItuCodes.american?(samoan), :!= => true
+  assert ItuCodes.american?(russian), :!= => true
+end.call
 
-  def test_should_convert_from_ISO_3166_code_to_ITU_code
-    assert_equal( '1',  ItuCodes.iso2itu('US') )
-    assert_equal( '1',  ItuCodes.iso2itu('CA') )
-    assert_nil( ItuCodes.iso2itu('not_an_iso_code') )
-    assert_equal( '52', ItuCodes.iso2itu('MX') )
-  end
-end
+lambda do
+  # test should convert from ISO 3166 code to ITU code
+  assert ItuCodes.iso2itu('US'), :== => '1'
+  assert ItuCodes.iso2itu('CA'), :== => '1'
+  assert ItuCodes.iso2itu('not_an_iso_code'), :== => nil
+  assert ItuCodes.iso2itu('MX'), :== => '52'
+end.call
