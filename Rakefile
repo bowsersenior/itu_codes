@@ -3,7 +3,9 @@ require 'rake'
 desc 'Default: run unit tests.'
 task :default => :test
 
-desc 'Test the itu_codes plugin.'
+desc 'Run tests'
 task :test do
-  `ruby test/itu_codes_test.rb`
+  command = "ruby test/**_test.rb"
+  puts command
+  system(command) && puts("all tests passed")
 end
