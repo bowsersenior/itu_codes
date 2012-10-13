@@ -5,8 +5,9 @@ task :default => :test
 
 desc 'Run tests'
 task :test do
-  test_files = Dir.glob('test/**/*_test.rb').join(' ')
-  command = "ruby #{test_files}"
-  puts command
-  system(command) && puts("all tests passed")
+  Dir.glob('test/**/*_test.rb').each do |test_file|
+    command = "ruby #{test_file}"
+    puts command
+    system(command) && puts("all tests passed for #{test_file}")
+  end
 end
