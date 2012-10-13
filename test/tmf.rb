@@ -34,10 +34,14 @@ module TMF
   end
 
   def stub(o, opts)
+    opts[:method] = opts[:spy] if opts.has_key?(:spy)
     old_method = o.respond_to?(opts[:method]) ? o.method(opts[:method]).to_proc : nil
 
     called = false
-    o.singleton_class.send(:define_method, opts[:method]) { called = 1; opts[:return] }
+    o.singleton_class.send(:define_method, opts[:method]) do |*args|
+      called = 1
+      opts[:error] ? raise(opts[:error]) : opts[:return]
+    end
 
     yield if block_given?
   ensure
