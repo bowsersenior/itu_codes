@@ -3,6 +3,6 @@ require 'bundler'
 Bundler.setup
 
 require 'itu_codes'
-require_relative 'tmf'
+require 'tmf'
 
 include TMF
