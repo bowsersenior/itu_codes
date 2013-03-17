@@ -49,23 +49,31 @@ Country code lookup based on official ISO-3166-1 specifications:
     ItuCodes.compatriots? '1984', '1985'
     # => true
 
-    # =====================================================
-    # = Using 2-letter ISO country codes is most reliable =
-    # =====================================================
     # ... and then there's the
     # North American 'situation' ...
     ItuCodes.compatriots? '1264', '1818'
     # => false
 
+    # =====================================================
+    # = Using 2-letter ISO country codes is most reliable =
+    # =====================================================
+
     # Convert from and to ISO 2-letter country codes:
     ItuCodes.iso2itu('US')
     # => "1"
+
+    # Convert from and to ISO 2-letter country codes:
+    ItuCodes.itu2iso('1')
+    # => ["AS", "AI", "AG", "BS", "BB", "BM", "VG", "CA", "KY", "DM", "DO", "GD", "GU", "JM", "MS", "MP", "PR", "KN", "LC", "VC", "SX", "TT", "TC", "US", "VI"]
 
     # Mexico
     # ISO 3361 code : MX
     # ITU code      : 52
     ItuCodes.iso2itu('MX')
     # => "52"
+
+    ItuCodes.itu2iso('52')
+    # => "MX"
 
 
 [1]: http://www.itu.int/pub/T-SP-E.164D-11-2011

@@ -108,3 +108,15 @@ lambda do
   assert ItuCodes.find_by_itu_code('382'), :== => 'Montenegro (Republic of)'
   assert ItuCodes.iso2itu('ME'), :== => '382'
 end.call
+
+lambda do
+  north_american_iso_codes = %w(
+    AS AI AG BS BB BM VG CA KY DM DO GD GU JM MS MP PR KN LC VC SX TT TC US VI
+  )
+
+  # convert from ITU code to ISO 3166-1 alpha-2 code
+  assert ItuCodes.itu2iso('1'), :== => north_american_iso_codes
+  assert ItuCodes.itu2iso('280'), :== => nil
+  assert ItuCodes.itu2iso('52'), :== => 'MX'
+  assert ItuCodes.itu2iso('7'), :== => ['KZ', 'RU']
+end.call

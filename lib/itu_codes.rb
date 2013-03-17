@@ -41,6 +41,18 @@ module ItuCodes
       find_by_name(country_name)
     end
 
+    def itu2iso(itu)
+      name = find_by_itu_code(itu)
+
+      if name.is_a?(String)
+        Helpers.country_code_lookup(name)
+      elsif name.is_a?(Array)
+        name.map do |s|
+          Helpers.country_code_lookup(s)
+        end
+      end
+    end
+
     # returns true for any valid ITU code
     # valid_code?(1)    => true
     # valid_code?(1818) => false
