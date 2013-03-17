@@ -16,8 +16,6 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = ">= 1.3.7"
 
-  s.add_dependency "i18n"
-  s.add_dependency "carmen"
   s.add_development_dependency('rake')
 
   s.files        = Dir.glob("{bin,lib}/**/*") + %w(MIT-LICENSE README.md)

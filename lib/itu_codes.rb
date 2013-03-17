@@ -1,7 +1,6 @@
 # to-do: deal with headache codes:
 # 1 --> Non-US need to be separated by area code
 # 7 --> Kazakhstan!
-require 'carmen'
 
 require 'itu_codes/constants'
 require 'itu_codes/helpers'
@@ -72,14 +71,19 @@ module ItuCodes
 
     def compatriots?(some, other)
       both_valid = ! ( parse_code(some).nil? or parse_code(other).nil? )
-      both_valid && ( parse_code(some) == parse_code(other) )
+
+      if north_american?(some) && north_american?(other)
+        both_valid && !(lookup(some) & lookup(other)).empty?
+      else
+        both_valid && lookup(some) == lookup(other)
+      end
     end
 
     def american?(some_code)
       # for non-US North American codes, parse_code will return a 4 digit code
       # for US, '1' will be returned
       countries = lookup(some_code[0,4]) || []
-      countries.include?('United States')
+      countries.include?('United States of America')
     end
 
     def canadian?(some_code)

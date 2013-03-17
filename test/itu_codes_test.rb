@@ -23,6 +23,7 @@ lambda do
   american  =    "1"
   newyorker = "1212"
   russian   =    "7"
+  italian   =   "39"
   alien     = "alksjlkknm"
 
   assert american,
@@ -33,6 +34,9 @@ lambda do
     :!= => ItuCodes.parse_code(newyorker),
     :!= => ItuCodes.parse_code(alien)
 
+  assert italian,
+    :== => ItuCodes.parse_code(italian)
+
   assert alien, :!= => ItuCodes.parse_code(alien)
 
   assert nil, :== => ItuCodes.parse_code(alien)
@@ -42,6 +46,7 @@ lambda do
   # test compatriot phone numbers should be detected
   american  =    "1"
   newyorker = "1212"
+  anguilan  = "1264"
   angeleno  = "1818"
   russian   =    "7"
   alien     = "alksjlkknm"
@@ -51,6 +56,7 @@ lambda do
 
   assert ItuCodes.compatriots?(newyorker, russian), :!= => true
   assert ItuCodes.compatriots?(american, russian), :!= => true
+  assert ItuCodes.compatriots?(newyorker, anguilan), :!= => true
 
   assert ItuCodes.compatriots?(american, alien), :!= => true
   assert ItuCodes.compatriots?(alien, alien), :!= => true
@@ -60,9 +66,9 @@ lambda do
   # test should deal gracefully with North America
   assert ItuCodes.find_by_itu_code('1684'), :== => "American Samoa"
   assert ItuCodes.find_by_itu_code('1250'), :== => "Canada"
-  assert ItuCodes.find_by_itu_code('1818'), :== => "United States"
+  assert ItuCodes.find_by_itu_code('1818'), :== => "United States of America"
 
-  assert ItuCodes.find_by_itu_code('1'), :include? => "United States"
+  assert ItuCodes.find_by_itu_code('1'), :include? => "United States of America"
   assert ItuCodes.find_by_itu_code('1'), :include? => "Canada"
   assert ItuCodes.find_by_itu_code('1'), :include? => "American Samoa"
 end.call

@@ -1,92 +1,98 @@
 ---
+# Data compiled from PDF document provided by ITU
+# See:
+#   * http://www.itu.int/pub/T-SP-E.164D-11-2011
+#   * vendor/itu/T-SP-E.164D-11-2011-PDF-E.pdf
+
 '0': Reserved
 '1':
-  - United States
-  - Canada
   - American Samoa
   - Anguilla
   - Antigua and Barbuda
-  - Bahamas
+  - Bahamas (Commonwealth of the)
   - Barbados
   - Bermuda
-  - Virgin Islands, British
+  - British Virgin Islands
+  - Canada
   - Cayman Islands
-  - Dominica
+  - Dominica (Commonwealth of)
   - Dominican Republic
   - Grenada
   - Guam
   - Jamaica
   - Montserrat
-  - Northern Mariana Islands
+  - Northern Mariana Islands (Commonwealth of the)
   - Puerto Rico
   - Saint Kitts and Nevis
   - Saint Lucia
   - Saint Vincent and the Grenadines
+  - Sint Maarten (Dutch part)
   - Trinidad and Tobago
   - Turks and Caicos Islands
-  - Virgin Islands, U.S.
-'20': Egypt
+  - United States of America
+  - United States Virgin Islands
+'20': Egypt (Arab Republic of)
 '210': Spare code
-'211': Spare code
-'212': Morocco
-'213': Algeria
+'211': South Sudan (Republic of)
+'212': Morocco (Kingdom of)
+'213': Algeria (People's Democratic Republic of)
 '214': Spare code
 '215': Spare code
 '216': Tunisia
 '217': Spare code
-'218': Libyan Arab Jamahiriya
+'218': Libya (Socialist People's Libyan Arab Jamahiriya)
 '219': Spare code
-'220': Gambia
-'221': Senegal
-'222': Mauritania
-'223': Mali
-'224': Guinea
-'225': Cote D'ivoire
+'220': Gambia (Republic of the)
+'221': Senegal (Republic of)
+'222': Mauritania (Islamic Republic of)
+'223': Mali (Republic of)
+'224': Guinea (Republic of)
+'225': Côte d'Ivoire (Republic of)
 '226': Burkina Faso
-'227': Niger
-'228': Togo
-'229': Benin
-'230': Mauritius
-'231': Liberia
+'227': Niger (Republic of the)
+'228': Togolese Republic
+'229': Benin (Republic of)
+'230': Mauritius (Republic of)
+'231': Liberia (Republic of)
 '232': Sierra Leone
 '233': Ghana
-'234': Nigeria
-'235': Chad
+'234': Nigeria (Federal Republic of)
+'235': Chad (Republic of)
 '236': Central African Republic
-'237': Cameroon
-'238': Cape Verde
-'239': Sao Tome and Principe
-'240': Equatorial Guinea
-'241': Gabon
-'242': Congo
-'243': Congo, the Democratic Republic of the
-'244': Angola
-'245': Guinea-Bissau
+'237': Cameroon (Republic of)
+'238': Cape Verde (Republic of)
+'239': Sao Tome and Principe (Democratic Republic of)
+'240': Equatorial Guinea (Republic of)
+'241': Gabonese Republic
+'242': Congo (Republic of the)
+'243': Democratic Republic of the Congo
+'244': Angola (Republic of)
+'245': Guinea-Bissau (Republic of)
 '246': Diego Garcia
-'247': Ascension Island
-'248': Seychelles
-'249': Sudan
-'250': Rwanda
-'251': Ethiopia
-'252': Somalia
-'253': Djibouti
-'254': Kenya
-'255': Tanzania, United Republic of
-'256': Uganda
-'257': Burundi
-'258': Mozambique
+'247': Saint Helena, Ascension and Tristan da Cunha
+'248': Seychelles (Republic of)
+'249': Sudan (Republic of the)
+'250': Rwanda (Republic of)
+'251': Ethiopia (Federal Democratic Republic of)
+'252': Somali Democratic Republic
+'253': Djibouti (Republic of)
+'254': Kenya (Republic of)
+'255': Tanzania (United Republic of)
+'256': Uganda (Republic of)
+'257': Burundi (Republic of)
+'258': Mozambique (Republic of)
 '259': Spare code
-'260': Zambia
-'261': Madagascar
-'262': Reunion
-'263': Zimbabwe
-'264': Namibia
+'260': Zambia (Republic of)
+'261': Madagascar (Republic of)
+'262': French Departments and Territories in the Indian Ocean
+'263': Zimbabwe (Republic of)
+'264': Namibia (Republic of)
 '265': Malawi
-'266': Lesotho
-'267': Botswana
-'268': Swaziland
-'269': Mayotte
-'27': South Africa
+'266': Lesotho (Kingdom of)
+'267': Botswana (Republic of)
+'268': Swaziland (Kingdom of)
+'269': Comoros (Union of the)
+'27': South Africa (Republic of)
 '280': Spare code
 '281': Spare code
 '282': Spare code
@@ -97,7 +103,7 @@
 '287': Spare code
 '288': Spare code
 '289': Spare code
-'290': Saint Helena
+'290': Saint Helena, Ascension and Tristan da Cunha
 '291': Eritrea
 '292': Spare code
 '293': Spare code
@@ -106,9 +112,9 @@
 '296': Spare code
 '297': Aruba
 '298': Faroe Islands
-'299': Greenland
+'299': Greenland (Denmark)
 '30': Greece
-'31': Netherlands
+'31': Netherlands (Kingdom of the)
 '32': Belgium
 '33': France
 '34': Spain
@@ -117,39 +123,41 @@
 '352': Luxembourg
 '353': Ireland
 '354': Iceland
-'355': Albania
+'355': Albania (Republic of)
 '356': Malta
-'357': Cyprus
+'357': Cyprus (Republic of)
 '358': Finland
-'359': Bulgaria
-'36': Hungary
-'370': Lithuania
-'371': Latvia
-'372': Estonia
-'373': Moldova, Republic of
-'374': Armenia
-'375': Belarus
-'376': Andorra
-'377': Monaco
-'378': San Marino
-'379': Holy See (Vatican City State)
+'359': Bulgaria (Republic of)
+'36': Hungary (Republic of)
+'370': Lithuania (Republic of)
+'371': Latvia (Republic of)
+'372': Estonia (Republic of)
+'373': Moldova (Republic of)
+'374': Armenia (Republic of)
+'375': Belarus (Republic of)
+'376': Andorra (Principality of)
+'377': Monaco (Principality of)
+'378': San Marino (Republic of)
+'379': Vatican City State
 '380': Ukraine
-'381': Serbia and Montenegro
-'382': Spare code
+'381': Serbia (Republic of)
+'382': Montenegro (Republic of)
 '383': Spare code
 '384': Spare code
-'385': Croatia
-'386': Slovenia
+'385': Croatia (Republic of)
+'386': Slovenia (Republic of)
 '387': Bosnia and Herzegovina
 '388': Group of countries, shared code
-'389': Macedonia, the Former Yugoslav Republic of
-'39': Italy
+'389': The Former Yugoslav Republic of Macedonia
+'39':
+  - Italy
+  - Vatican City State
 '40': Romania
-'41': Switzerland
+'41': Switzerland (Confederation of)
 '420': Czech Republic
-'421': Slovakia
+'421': Slovak Republic
 '422': Spare code
-'423': Liechtenstein
+'423': Liechtenstein (Principality of)
 '424': Spare code
 '425': Spare code
 '426': Spare code
@@ -157,70 +165,72 @@
 '428': Spare code
 '429': Spare code
 '43': Austria
-'44': United Kingdom
+'44': United Kingdom of Great Britain and Northern Ireland
 '45': Denmark
 '46': Sweden
 '47': Norway
-'48': Poland
-'49': Germany
-'500': Falkland Islands
+'48': Poland (Republic of)
+'49': Germany (Federal Republic of)
+'500': Falkland Islands (Malvinas)
 '501': Belize
-'502': Guatemala
-'503': El Salvador
-'504': Honduras
+'502': Guatemala (Republic of)
+'503': El Salvador (Republic of)
+'504': Honduras (Republic of)
 '505': Nicaragua
 '506': Costa Rica
-'507': Panama
-'508': Saint Pierre and Miquelon
-'509': Haiti
+'507': Panama (Republic of)
+'508': Saint Pierre and Miquelon (Collectivité territoriale de la République française)
+'509': Haiti (Republic of)
 '51': Peru
 '52': Mexico
 '53': Cuba
-'54': Argentina
-'55': Brazil
+'54': Argentine Republic
+'55': Brazil (Federative Republic of)
 '56': Chile
-'57': Colombia
-'58': Venezuela
-'590': Guadeloupe
-'591': Bolivia
+'57': Colombia (Republic of)
+'58': Venezuela (Bolivarian Republic of)
+'590': Guadeloupe (French Department of)
+'591': Bolivia (Plurinational State of)
 '592': Guyana
 '593': Ecuador
-'594': French Guiana
-'595': Paraguay
-'596': Martinique
-'597': Suriname
-'598': Uruguay
-'599': Netherlands Antilles
+'594': French Guiana (French Department of)
+'595': Paraguay (Republic of)
+'596': Martinique (French Department of)
+'597': Suriname (Republic of)
+'598': Uruguay (Eastern Republic of)
+'599':
+  - Bonaire, Saint Eustatius and Saba
+  - Curaçao
 '60': Malaysia
 '61': Australia
-'62': Indonesia
-'63': Philippines
+'62': Indonesia (Republic of)
+'63': Philippines (Republic of the)
 '64': New Zealand
-'65': Singapore
+'65': Singapore (Republic of)
 '66': Thailand
-'670': Timor-Leste
+'670': Democratic Republic of Timor-Leste
 '671': Spare code
 '672': Australian External Territories
 '673': Brunei Darussalam
-'674': Nauru
+'674': Nauru (Republic of)
 '675': Papua New Guinea
-'676': Tonga
+'676': Tonga (Kingdom of)
 '677': Solomon Islands
-'678': Vanuatu
-'679': Fiji
-'680': Palau
-'681': Wallis and Futuna
+'678': Vanuatu (Republic of)
+'679': Fiji (Republic of)
+'680': Palau (Republic of)
+'681': Wallis and Futuna (Territoire français d'outre-mer)
 '682': Cook Islands
 '683': Niue
 '684': Spare code
-'685': Samoa
-'686': Kiribati
-'687': New Caledonia
+'685': Samoa (Independent State of)
+'686': Kiribati (Republic of)
+'687': New Caledonia (Territoire français d'outre-mer)
 '688': Tuvalu
-'689': French Polynesia
+'689': French Polynesia (Territoire français d'outre-mer)
 '690': Tokelau
-'691': Micronesia, Federated States of
-'692': Marshall Islands
+'691': Micronesia (Federated States of)
+'692': Marshall Islands (Republic of the)
 '693': Spare code
 '694': Spare code
 '695': Spare code
@@ -229,10 +239,8 @@
 '698': Spare code
 '699': Spare code
 '7':
+  - Kazakhstan (Republic of)
   - Russian Federation
-  - Kazakhstan
-'76': Kazakhstan
-'77': Kazakhstan
 '800': International Freephone Service
 '801': Spare code
 '802': Spare code
@@ -241,10 +249,10 @@
 '805': Spare code
 '806': Spare code
 '807': Spare code
-'808': International Shared Cost Service
+'808': International Shared Cost Service (ISCS)
 '809': Spare code
 '81': Japan
-'82': Korea, Republic of
+'82': Korea (Republic of)
 '830': Spare code
 '831': Spare code
 '832': Spare code
@@ -255,37 +263,37 @@
 '837': Spare code
 '838': Spare code
 '839': Spare code
-'84': Viet Nam
-'850': Korea, Democratic People's Republic of
+'84': Viet Nam (Socialist Republic of)
+'850': Democratic People's Republic of Korea
 '851': Spare code
-'852': Hong Kong
-'853': Macao
+'852': Hong Kong, China
+'853': Macao, China
 '854': Spare code
-'855': Cambodia
+'855': Cambodia (Kingdom of)
 '856': Lao People's Democratic Republic
 '857': Spare code
 '858': Spare code
 '859': Spare code
-'86': China
+'86': China (People's Republic of)
 '870': Inmarsat SNAC
-'871': Inmarsat
-'872': Inmarsat
-'873': Inmarsat
-'874': Inmarsat
+'871': Spare code
+'872': Spare code
+'873': Spare code
+'874': Spare code
 '875': Reserved - Maritime Mobile Service Applications
 '876': Reserved - Maritime Mobile Service Applications
 '877': Reserved - Maritime Mobile Service Applications
-'878': Universal Personal Telecommunication Service
+'878': Universal Personal Telecommunication Service (UPT)
 '879': Reserved for national non-commercial purposes
-'880': Bangladesh
-'881': International Mobile, shared code
+'880': Bangladesh (People's Republic of)
+'881': Global Mobile Satellite System (GMSS), shared code
 '882': International Networks, shared code
-'883': Spare code
+'883': International Networks, shared code
 '884': Spare code
 '885': Spare code
-'886': Reserved
+'886': Taiwan, China
 '887': Spare code
-'888': Reserved for future global service
+'888': Telecommunications for Disaster Relief (TDR)
 '889': Spare code
 '890': Spare code
 '891': Spare code
@@ -298,35 +306,40 @@
 '898': Spare code
 '899': Spare code
 '90': Turkey
-'91': India
-'92': Pakistan
+'91': India (Republic of)
+'92': Pakistan (Islamic Republic of)
 '93': Afghanistan
-'94': Sri Lanka
-'95': Myanmar
-'960': Maldives
+'94': Sri Lanka (Democratic Socialist Republic of)
+'95': Myanmar (the Republic of the Union of)
+'960': Maldives (Republic of)
 '961': Lebanon
-'962': Jordan
+'962': Jordan (Hashemite Kingdom of)
 '963': Syrian Arab Republic
-'964': Iraq
-'965': Kuwait
-'966': Saudi Arabia
-'967': Yemen
-'968': Oman
+'964': Iraq (Republic of)
+'965': Kuwait (State of)
+'966': Saudi Arabia (Kingdom of)
+'967': Yemen (Republic of)
+'968': Oman (Sultanate of)
 '969': Reserved - reservation currently under investigation
 '970': Reserved
 '971': United Arab Emirates
-'972': Israel
-'973': Bahrain
-'974': Qatar
-'975': Bhutan
+'972': Israel (State of)
+'973': Bahrain (Kingdom of)
+'974': Qatar (State of)
+'975': Bhutan (Kingdom of)
 '976': Mongolia
-'977': Nepal
+'977': Nepal (Federal Democratic Republic of)
 '978': Spare code
-'979': International Premium Rate Service
-'98': Iran, Islamic Republic of
+'979': International Premium Rate Service (IPRS)
+'98': Iran (Islamic Republic of)
 '990': Spare code
 '991': Trial of a proposed new international telecommunication public correspondence
-'992': Tajikistan
+  service, shared code
+'992': Tajikistan (Republic of)
 '993': Turkmenistan
-'994': Azerbaijan
+'994': Azerbaijani Republic
 '995': Georgia
+'996': Kyrgyz Republic
+'997': Spare code
+'998': Uzbekistan (Republic of)
+'999': Reserved for future global service

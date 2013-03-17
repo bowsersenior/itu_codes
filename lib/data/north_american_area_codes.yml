@@ -1,5 +1,10 @@
 ---
-United States:
+# Data compiled from PDF document provided by ITU
+# See:
+#   * http://www.itu.int/pub/T-SP-E.164D-11-2011
+#   * vendor/itu/T-SP-E.164D-11-2011-PDF-E.pdf
+
+United States of America:
   - '1201'
   - '1202'
   - '1203'
@@ -366,7 +371,7 @@ Antigua and Barbuda: '1268'
 Bahamas: '1242'
 Barbados: '1246'
 Bermuda: '1441'
-Virgin Islands, British: '1284'
+British Virgin Islands: '1284'
 Cayman Islands: '1345'
 Dominica: '1767'
 Dominican Republic:
@@ -386,4 +391,4 @@ Saint Lucia: '1758'
 Saint Vincent and the Grenadines: '1784'
 Trinidad and Tobago: '1868'
 Turks and Caicos Islands: '1649'
-Virgin Islands, U.S.: '1340'
+United States Virgin Islands: '1340'

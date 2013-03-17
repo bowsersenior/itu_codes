@@ -2,8 +2,12 @@
 
 Helper library for telephone country codes based on the official International Telecommunications Union specifications:
 
-* [LIST OF MOBILE COUNTRY OR GEOGRAPHICAL AREA CODES][1]
+* [List of ITU-T Recommendation E.164 assigned country codes][1]
 * [LIST OF ITU-T RECOMMENDATION E.164 ASSIGNED COUNTRY CODES (POSITION ON 1 NOVEMBER 2011)][2]
+
+Country code lookup based on official ISO-3166-1 specifications:
+* [Country Codes - ISO 3166][3]
+* [list of alpha-2 country codes in XML format][4]
 
 ## Usage:
 
@@ -22,7 +26,7 @@ Helper library for telephone country codes based on the official International T
     ItuCodes.parse_code '4'
     # => nil
 
-    ItuCodes.find 'France'
+    ItuCodes.find_by_name 'France'
     # => "33"
 
     ItuCodes.find_by_itu_code '995'
@@ -64,5 +68,7 @@ Helper library for telephone country codes based on the official International T
     # => "52"
 
 
-[1]: http://www.itu.int/itudoc/itu-t/ob-lists/icc/e212_685.pdf
+[1]: http://www.itu.int/pub/T-SP-E.164D-11-2011
 [2]: http://www.itu.int/dms_pub/itu-t/opb/sp/T-SP-E.164D-11-2011-PDF-E.pdf
+[3]: http://www.iso.org/iso/home/standards/country_codes
+[4]: http://www.iso.org/iso/home/standards/country_codes/country_names_and_code_elements_xml

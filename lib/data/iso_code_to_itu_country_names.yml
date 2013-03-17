@@ -1,0 +1,248 @@
+---
+# The names of territories used by the ITU do not match exactly
+# the names used by the ISO, so a dictionary is required to map
+# ISO 3166-1 two-letter codes to the territory names used by ITU
+
+# Data compiled from XML file provided by ISO and PDF document
+# provided by ITU
+# See:
+#   * http://www.iso.org/iso/home/standards/country_codes
+#   * vendor/iso/country_names_and_code_elements_xml.xml
+#
+#   * http://www.itu.int/pub/T-SP-E.164D-11-2011
+#   * vendor/itu/T-SP-E.164D-11-2011-PDF-E.pdf
+
+# The following 3 names used by the ITU do not have an ISO-3166-1
+# 2 letter code:
+#
+# - Diego Garcia
+# - French Departments and Territories in the Indian Ocean
+# - Australian External Territories
+
+AD: Andorra (Principality of)
+AE: United Arab Emirates
+AF: Afghanistan
+AG: Antigua and Barbuda
+AI: Anguilla
+AL: Albania (Republic of)
+AM: Armenia (Republic of)
+AO: Angola (Republic of)
+AR: Argentine Republic
+AS: American Samoa
+AT: Austria
+AU: Australia
+AW: Aruba
+AZ: Azerbaijani Republic
+BA: Bosnia and Herzegovina
+BB: Barbados
+BD: Bangladesh (People's Republic of)
+BE: Belgium
+BF: Burkina Faso
+BG: Bulgaria (Republic of)
+BH: Bahrain (Kingdom of)
+BI: Burundi (Republic of)
+BJ: Benin (Republic of)
+BM: Bermuda
+BN: Brunei Darussalam
+BO: Bolivia (Plurinational State of)
+BQ: Bonaire, Saint Eustatius and Saba
+BR: Brazil (Federative Republic of)
+BS: Bahamas (Commonwealth of the)
+BT: Bhutan (Kingdom of)
+BW: Botswana (Republic of)
+BY: Belarus (Republic of)
+BZ: Belize
+CA: Canada
+CD: Democratic Republic of the Congo
+CF: Central African Republic
+CG: Congo (Republic of the)
+CH: Switzerland (Confederation of)
+CI: Côte d'Ivoire (Republic of)
+CK: Cook Islands
+CL: Chile
+CM: Cameroon (Republic of)
+CN: China (People's Republic of)
+CO: Colombia (Republic of)
+CR: Costa Rica
+CU: Cuba
+CV: Cape Verde (Republic of)
+CW: Curaçao
+CY: Cyprus (Republic of)
+CZ: Czech Republic
+DE: Germany (Federal Republic of)
+DJ: Djibouti (Republic of)
+DK: Denmark
+DM: Dominica (Commonwealth of)
+DO: Dominican Republic
+DZ: Algeria (People's Democratic Republic of)
+EC: Ecuador
+EE: Estonia (Republic of)
+EG: Egypt (Arab Republic of)
+ER: Eritrea
+ES: Spain
+ET: Ethiopia (Federal Democratic Republic of)
+FI: Finland
+FJ: Fiji (Republic of)
+FK: Falkland Islands (Malvinas)
+FM: Micronesia (Federated States of)
+FO: Faroe Islands
+FR: France
+GA: Gabonese Republic
+GB: United Kingdom of Great Britain and Northern Ireland
+GD: Grenada
+GE: Georgia
+GF: French Guiana (French Department of)
+GH: Ghana
+GI: Gibraltar
+GL: Greenland (Denmark)
+GM: Gambia (Republic of the)
+GN: Guinea (Republic of)
+GP: Guadeloupe (French Department of)
+GQ: Equatorial Guinea (Republic of)
+GR: Greece
+GT: Guatemala (Republic of)
+GU: Guam
+GW: Guinea-Bissau (Republic of)
+GY: Guyana
+HK: Hong Kong, China
+HN: Honduras (Republic of)
+HR: Croatia (Republic of)
+HT: Haiti (Republic of)
+HU: Hungary (Republic of)
+ID: Indonesia (Republic of)
+IE: Ireland
+IL: Israel (State of)
+IN: India (Republic of)
+IQ: Iraq (Republic of)
+IR: Iran (Islamic Republic of)
+IS: Iceland
+IT: Italy
+JM: Jamaica
+JO: Jordan (Hashemite Kingdom of)
+JP: Japan
+KE: Kenya (Republic of)
+KG: Kyrgyz Republic
+KH: Cambodia (Kingdom of)
+KI: Kiribati (Republic of)
+KM: Comoros (Union of the)
+KN: Saint Kitts and Nevis
+KP: Democratic People's Republic of Korea
+KR: Korea (Republic of)
+KW: Kuwait (State of)
+KY: Cayman Islands
+KZ: Kazakhstan (Republic of)
+LA: Lao People's Democratic Republic
+LB: Lebanon
+LC: Saint Lucia
+LI: Liechtenstein (Principality of)
+LK: Sri Lanka (Democratic Socialist Republic of)
+LR: Liberia (Republic of)
+LS: Lesotho (Kingdom of)
+LT: Lithuania (Republic of)
+LU: Luxembourg
+LV: Latvia (Republic of)
+LY: Libya (Socialist People's Libyan Arab Jamahiriya)
+MA: Morocco (Kingdom of)
+MC: Monaco (Principality of)
+MD: Moldova (Republic of)
+ME: Montenegro (Republic of)
+MG: Madagascar (Republic of)
+MH: Marshall Islands (Republic of the)
+MK: The Former Yugoslav Republic of Macedonia
+ML: Mali (Republic of)
+MM: Myanmar (the Republic of the Union of)
+MN: Mongolia
+MO: Macao, China
+MP: Northern Mariana Islands (Commonwealth of the)
+MQ: Martinique (French Department of)
+MR: Mauritania (Islamic Republic of)
+MS: Montserrat
+MT: Malta
+MU: Mauritius (Republic of)
+MV: Maldives (Republic of)
+MW: Malawi
+MX: Mexico
+MY: Malaysia
+MZ: Mozambique (Republic of)
+NA: Namibia (Republic of)
+NC: New Caledonia (Territoire français d'outre-mer)
+NE: Niger (Republic of the)
+NG: Nigeria (Federal Republic of)
+NI: Nicaragua
+NL: Netherlands (Kingdom of the)
+'NO': Norway
+NP: Nepal (Federal Democratic Republic of)
+NR: Nauru (Republic of)
+NU: Niue
+NZ: New Zealand
+OM: Oman (Sultanate of)
+PA: Panama (Republic of)
+PE: Peru
+PF: French Polynesia (Territoire français d'outre-mer)
+PG: Papua New Guinea
+PH: Philippines (Republic of the)
+PK: Pakistan (Islamic Republic of)
+PL: Poland (Republic of)
+PM: Saint Pierre and Miquelon (Collectivité territoriale de la République française)
+PR: Puerto Rico
+PT: Portugal
+PW: Palau (Republic of)
+PY: Paraguay (Republic of)
+QA: Qatar (State of)
+RO: Romania
+RS: Serbia (Republic of)
+RU: Russian Federation
+RW: Rwanda (Republic of)
+SA: Saudi Arabia (Kingdom of)
+SB: Solomon Islands
+SC: Seychelles (Republic of)
+SD: Sudan (Republic of the)
+SE: Sweden
+SG: Singapore (Republic of)
+SH: Saint Helena, Ascension and Tristan da Cunha
+SI: Slovenia (Republic of)
+SK: Slovak Republic
+SL: Sierra Leone
+SM: San Marino (Republic of)
+SN: Senegal (Republic of)
+SO: Somali Democratic Republic
+SR: Suriname (Republic of)
+SS: South Sudan (Republic of)
+ST: Sao Tome and Principe (Democratic Republic of)
+SV: El Salvador (Republic of)
+SX: Sint Maarten (Dutch part)
+SY: Syrian Arab Republic
+SZ: Swaziland (Kingdom of)
+TC: Turks and Caicos Islands
+TD: Chad (Republic of)
+TG: Togolese Republic
+TH: Thailand
+TJ: Tajikistan (Republic of)
+TK: Tokelau
+TL: Democratic Republic of Timor-Leste
+TM: Turkmenistan
+TN: Tunisia
+TO: Tonga (Kingdom of)
+TR: Turkey
+TT: Trinidad and Tobago
+TV: Tuvalu
+TW: Taiwan, China
+TZ: Tanzania (United Republic of)
+UA: Ukraine
+UG: Uganda (Republic of)
+US: United States of America
+UY: Uruguay (Eastern Republic of)
+UZ: Uzbekistan (Republic of)
+VA: Vatican City State
+VC: Saint Vincent and the Grenadines
+VE: Venezuela (Bolivarian Republic of)
+VG: British Virgin Islands
+VI: United States Virgin Islands
+VN: Viet Nam (Socialist Republic of)
+VU: Vanuatu (Republic of)
+WF: Wallis and Futuna (Territoire français d'outre-mer)
+WS: Samoa (Independent State of)
+YE: Yemen (Republic of)
+ZA: South Africa (Republic of)
+ZM: Zambia (Republic of)
+ZW: Zimbabwe (Republic of)
