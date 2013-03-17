@@ -46,7 +46,7 @@ Country code lookup based on official ISO-3166-1 specifications:
 
     # ... but these are for
     # the same country ...
-    ItuCodes.compatriots? '122', '111'
+    ItuCodes.compatriots? '1984', '1985'
     # => true
 
     # =====================================================

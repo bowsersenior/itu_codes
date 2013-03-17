@@ -75,6 +75,8 @@ module ItuCodes
       if north_american?(some) && north_american?(other)
         both_valid && !(lookup(some) & lookup(other)).empty?
       else
+        some  = parse_code(some)
+        other = parse_code(other)
         both_valid && lookup(some) == lookup(other)
       end
     end

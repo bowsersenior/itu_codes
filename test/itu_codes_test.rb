@@ -60,6 +60,9 @@ lambda do
 
   assert ItuCodes.compatriots?(american, alien), :!= => true
   assert ItuCodes.compatriots?(alien, alien), :!= => true
+
+  assert ItuCodes.compatriots?('822', '811'), :!= => true
+  assert ItuCodes.compatriots?('1984', '1985'), :== => true
 end.call
 
 lambda do
