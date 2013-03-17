@@ -2,7 +2,7 @@ require 'yaml'
 
 module ItuCodes
   module Helpers
-    ISO2ITU = YAML.load_file('lib/data/iso_code_to_itu_country_names.yml')
+    ISO2ITU = YAML.load_file(  File.expand_path(File.dirname(__FILE__)) + '/../data/iso_code_to_itu_country_names.yml')
 
     def self.country_code_lookup(country_name)
       ISO2ITU.key(country_name)
