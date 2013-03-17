@@ -12,13 +12,6 @@
 #   * http://www.itu.int/pub/T-SP-E.164D-11-2011
 #   * vendor/itu/T-SP-E.164D-11-2011-PDF-E.pdf
 
-# The following 3 names used by the ITU do not have an ISO-3166-1
-# 2 letter code:
-#
-# - Diego Garcia
-# - French Departments and Territories in the Indian Ocean
-# - Australian External Territories
-
 AD: Andorra (Principality of)
 AE: United Arab Emirates
 AF: Afghanistan
@@ -215,6 +208,7 @@ SY: Syrian Arab Republic
 SZ: Swaziland (Kingdom of)
 TC: Turks and Caicos Islands
 TD: Chad (Republic of)
+TF: French Departments and Territories in the Indian Ocean
 TG: Togolese Republic
 TH: Thailand
 TJ: Tajikistan (Republic of)
@@ -246,3 +240,24 @@ YE: Yemen (Republic of)
 ZA: South Africa (Republic of)
 ZM: Zambia (Republic of)
 ZW: Zimbabwe (Republic of)
+
+# Diego Garcia is not included in the XML file provided by ISO
+# ISO 2 letter code provided on request of ITU:
+# http://www.iso.org/iso/home/standards/country_codes/iso-3166-1_decoding_table.htm#DG
+DG: Diego Garcia
+
+# Australian External Territories
+# The ITU code 672 is defined in the PDF file provided by ITU
+# as being assigned to the "Australian External Territories"
+# However, the ITU website defines 672 for "Norfolk Island"
+# see: http://www.itu.int/oth/T0202.aspx?parent=T0202
+# To make the matter more confusing, ISO defines 4 separate ISO
+# codes for the Australian external territories:
+# http://www.iso.org/iso/home/standards/country_codes/iso-3166-1_decoding_table.htm#CC
+# http://www.iso.org/iso/home/standards/country_codes/iso-3166-1_decoding_table.htm#CX
+# http://www.iso.org/iso/home/standards/country_codes/iso-3166-1_decoding_table.htm#HM
+# http://www.iso.org/iso/home/standards/country_codes/iso-3166-1_decoding_table.htm#NF
+CC: Australian External Territories
+CX: Australian External Territories
+HM: Australian External Territories
+NF: Australian External Territories

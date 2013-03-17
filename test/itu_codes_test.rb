@@ -107,14 +107,21 @@ lambda do
   # data should be up to date
   assert ItuCodes.find_by_itu_code('382'), :== => 'Montenegro (Republic of)'
   assert ItuCodes.iso2itu('ME'), :== => '382'
+
+  assert ItuCodes.find_by_itu_code('246'), :== => "Diego Garcia"
+  assert ItuCodes.iso2itu('DG'), :== => "246"
+
+  assert ItuCodes.find_by_itu_code('672'), :== => "Australian External Territories"
+  assert ItuCodes.iso2itu('NF'), :== => "672"
+  assert ItuCodes.itu2iso('672'), :== => ["CC", "CX", "HM", "NF"]
 end.call
 
 lambda do
+  # convert from ITU code to ISO 3166-1 alpha-2 code
   north_american_iso_codes = %w(
     AS AI AG BS BB BM VG CA KY DM DO GD GU JM MS MP PR KN LC VC SX TT TC US VI
   )
 
-  # convert from ITU code to ISO 3166-1 alpha-2 code
   assert ItuCodes.itu2iso('1'), :== => north_american_iso_codes
   assert ItuCodes.itu2iso('280'), :== => nil
   assert ItuCodes.itu2iso('52'), :== => 'MX'

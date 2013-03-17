@@ -6,7 +6,15 @@ module ItuCodes
 
     # country name is the one used by ITU, not ISO
     def self.country_code_lookup(country_name)
-      ISO2ITU.key(country_name)
+      codes = ISO2ITU.select{|k,v| v === country_name}.keys
+
+      if codes.empty?
+        nil
+      elsif codes.size === 1
+        codes.first
+      else
+        codes
+      end
     end
 
     def self.country_name_lookup(iso_code)
