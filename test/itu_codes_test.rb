@@ -102,3 +102,9 @@ lambda do
   assert ItuCodes.iso2itu('not_an_iso_code'), :== => nil
   assert ItuCodes.iso2itu('MX'), :== => '52'
 end.call
+
+lambda do
+  # data should be up to date
+  assert ItuCodes.find_by_itu_code('382'), :== => 'Montenegro (Republic of)'
+  assert ItuCodes.iso2itu('ME'), :== => '382'
+end.call
