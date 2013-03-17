@@ -1,0 +1,332 @@
+---
+'0': Reserved
+'1':
+  - United States
+  - Canada
+  - American Samoa
+  - Anguilla
+  - Antigua and Barbuda
+  - Bahamas
+  - Barbados
+  - Bermuda
+  - Virgin Islands, British
+  - Cayman Islands
+  - Dominica
+  - Dominican Republic
+  - Grenada
+  - Guam
+  - Jamaica
+  - Montserrat
+  - Northern Mariana Islands
+  - Puerto Rico
+  - Saint Kitts and Nevis
+  - Saint Lucia
+  - Saint Vincent and the Grenadines
+  - Trinidad and Tobago
+  - Turks and Caicos Islands
+  - Virgin Islands, U.S.
+'20': Egypt
+'210': Spare code
+'211': Spare code
+'212': Morocco
+'213': Algeria
+'214': Spare code
+'215': Spare code
+'216': Tunisia
+'217': Spare code
+'218': Libyan Arab Jamahiriya
+'219': Spare code
+'220': Gambia
+'221': Senegal
+'222': Mauritania
+'223': Mali
+'224': Guinea
+'225': Cote D'ivoire
+'226': Burkina Faso
+'227': Niger
+'228': Togo
+'229': Benin
+'230': Mauritius
+'231': Liberia
+'232': Sierra Leone
+'233': Ghana
+'234': Nigeria
+'235': Chad
+'236': Central African Republic
+'237': Cameroon
+'238': Cape Verde
+'239': Sao Tome and Principe
+'240': Equatorial Guinea
+'241': Gabon
+'242': Congo
+'243': Congo, the Democratic Republic of the
+'244': Angola
+'245': Guinea-Bissau
+'246': Diego Garcia
+'247': Ascension Island
+'248': Seychelles
+'249': Sudan
+'250': Rwanda
+'251': Ethiopia
+'252': Somalia
+'253': Djibouti
+'254': Kenya
+'255': Tanzania, United Republic of
+'256': Uganda
+'257': Burundi
+'258': Mozambique
+'259': Spare code
+'260': Zambia
+'261': Madagascar
+'262': Reunion
+'263': Zimbabwe
+'264': Namibia
+'265': Malawi
+'266': Lesotho
+'267': Botswana
+'268': Swaziland
+'269': Mayotte
+'27': South Africa
+'280': Spare code
+'281': Spare code
+'282': Spare code
+'283': Spare code
+'284': Spare code
+'285': Spare code
+'286': Spare code
+'287': Spare code
+'288': Spare code
+'289': Spare code
+'290': Saint Helena
+'291': Eritrea
+'292': Spare code
+'293': Spare code
+'294': Spare code
+'295': Spare code
+'296': Spare code
+'297': Aruba
+'298': Faroe Islands
+'299': Greenland
+'30': Greece
+'31': Netherlands
+'32': Belgium
+'33': France
+'34': Spain
+'350': Gibraltar
+'351': Portugal
+'352': Luxembourg
+'353': Ireland
+'354': Iceland
+'355': Albania
+'356': Malta
+'357': Cyprus
+'358': Finland
+'359': Bulgaria
+'36': Hungary
+'370': Lithuania
+'371': Latvia
+'372': Estonia
+'373': Moldova, Republic of
+'374': Armenia
+'375': Belarus
+'376': Andorra
+'377': Monaco
+'378': San Marino
+'379': Holy See (Vatican City State)
+'380': Ukraine
+'381': Serbia and Montenegro
+'382': Spare code
+'383': Spare code
+'384': Spare code
+'385': Croatia
+'386': Slovenia
+'387': Bosnia and Herzegovina
+'388': Group of countries, shared code
+'389': Macedonia, the Former Yugoslav Republic of
+'39': Italy
+'40': Romania
+'41': Switzerland
+'420': Czech Republic
+'421': Slovakia
+'422': Spare code
+'423': Liechtenstein
+'424': Spare code
+'425': Spare code
+'426': Spare code
+'427': Spare code
+'428': Spare code
+'429': Spare code
+'43': Austria
+'44': United Kingdom
+'45': Denmark
+'46': Sweden
+'47': Norway
+'48': Poland
+'49': Germany
+'500': Falkland Islands
+'501': Belize
+'502': Guatemala
+'503': El Salvador
+'504': Honduras
+'505': Nicaragua
+'506': Costa Rica
+'507': Panama
+'508': Saint Pierre and Miquelon
+'509': Haiti
+'51': Peru
+'52': Mexico
+'53': Cuba
+'54': Argentina
+'55': Brazil
+'56': Chile
+'57': Colombia
+'58': Venezuela
+'590': Guadeloupe
+'591': Bolivia
+'592': Guyana
+'593': Ecuador
+'594': French Guiana
+'595': Paraguay
+'596': Martinique
+'597': Suriname
+'598': Uruguay
+'599': Netherlands Antilles
+'60': Malaysia
+'61': Australia
+'62': Indonesia
+'63': Philippines
+'64': New Zealand
+'65': Singapore
+'66': Thailand
+'670': Timor-Leste
+'671': Spare code
+'672': Australian External Territories
+'673': Brunei Darussalam
+'674': Nauru
+'675': Papua New Guinea
+'676': Tonga
+'677': Solomon Islands
+'678': Vanuatu
+'679': Fiji
+'680': Palau
+'681': Wallis and Futuna
+'682': Cook Islands
+'683': Niue
+'684': Spare code
+'685': Samoa
+'686': Kiribati
+'687': New Caledonia
+'688': Tuvalu
+'689': French Polynesia
+'690': Tokelau
+'691': Micronesia, Federated States of
+'692': Marshall Islands
+'693': Spare code
+'694': Spare code
+'695': Spare code
+'696': Spare code
+'697': Spare code
+'698': Spare code
+'699': Spare code
+'7':
+  - Russian Federation
+  - Kazakhstan
+'76': Kazakhstan
+'77': Kazakhstan
+'800': International Freephone Service
+'801': Spare code
+'802': Spare code
+'803': Spare code
+'804': Spare code
+'805': Spare code
+'806': Spare code
+'807': Spare code
+'808': International Shared Cost Service
+'809': Spare code
+'81': Japan
+'82': Korea, Republic of
+'830': Spare code
+'831': Spare code
+'832': Spare code
+'833': Spare code
+'834': Spare code
+'835': Spare code
+'836': Spare code
+'837': Spare code
+'838': Spare code
+'839': Spare code
+'84': Viet Nam
+'850': Korea, Democratic People's Republic of
+'851': Spare code
+'852': Hong Kong
+'853': Macao
+'854': Spare code
+'855': Cambodia
+'856': Lao People's Democratic Republic
+'857': Spare code
+'858': Spare code
+'859': Spare code
+'86': China
+'870': Inmarsat SNAC
+'871': Inmarsat
+'872': Inmarsat
+'873': Inmarsat
+'874': Inmarsat
+'875': Reserved - Maritime Mobile Service Applications
+'876': Reserved - Maritime Mobile Service Applications
+'877': Reserved - Maritime Mobile Service Applications
+'878': Universal Personal Telecommunication Service
+'879': Reserved for national non-commercial purposes
+'880': Bangladesh
+'881': International Mobile, shared code
+'882': International Networks, shared code
+'883': Spare code
+'884': Spare code
+'885': Spare code
+'886': Reserved
+'887': Spare code
+'888': Reserved for future global service
+'889': Spare code
+'890': Spare code
+'891': Spare code
+'892': Spare code
+'893': Spare code
+'894': Spare code
+'895': Spare code
+'896': Spare code
+'897': Spare code
+'898': Spare code
+'899': Spare code
+'90': Turkey
+'91': India
+'92': Pakistan
+'93': Afghanistan
+'94': Sri Lanka
+'95': Myanmar
+'960': Maldives
+'961': Lebanon
+'962': Jordan
+'963': Syrian Arab Republic
+'964': Iraq
+'965': Kuwait
+'966': Saudi Arabia
+'967': Yemen
+'968': Oman
+'969': Reserved - reservation currently under investigation
+'970': Reserved
+'971': United Arab Emirates
+'972': Israel
+'973': Bahrain
+'974': Qatar
+'975': Bhutan
+'976': Mongolia
+'977': Nepal
+'978': Spare code
+'979': International Premium Rate Service
+'98': Iran, Islamic Republic of
+'990': Spare code
+'991': Trial of a proposed new international telecommunication public correspondence
+'992': Tajikistan
+'993': Turkmenistan
+'994': Azerbaijan
+'995': Georgia
