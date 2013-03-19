@@ -70,6 +70,13 @@ lambda do
   assert ItuCodes.compatriots?('75', '77'), :== => false
 end.call
 
+lambda do 
+  # country_for should return the country name(s) or nil
+  assert ItuCodes.country_for('33'), :== => "France"
+  assert ItuCodes.country_for('88'), :== => nil
+  assert ItuCodes.country_for('1'), :is_a? => Array
+end.call
+
 lambda do
   # test should deal gracefully with North America
   assert ItuCodes.country_for('1684'), :== => "American Samoa"
@@ -90,6 +97,8 @@ lambda do
   assert ItuCodes.country_for('76'), :== => "Kazakhstan (Republic of)"
   assert ItuCodes.country_for('77'), :== => "Kazakhstan (Republic of)"
 end.call
+
+
 
 lambda do
   # test should detect american numbers
@@ -119,19 +128,6 @@ lambda do
 end.call
 
 lambda do
-  # data should be up to date
-  assert ItuCodes.find_by_itu_code('382'), :== => 'Montenegro (Republic of)'
-  assert ItuCodes.iso2itu('ME'), :== => '382'
-
-  assert ItuCodes.find_by_itu_code('246'), :== => "Diego Garcia"
-  assert ItuCodes.iso2itu('DG'), :== => "246"
-
-  assert ItuCodes.find_by_itu_code('672'), :== => "Australian External Territories"
-  assert ItuCodes.iso2itu('NF'), :== => "672"
-  assert ItuCodes.itu2iso('672'), :== => ["CC", "CX", "HM", "NF"]
-end.call
-
-lambda do
   # convert from ITU code to ISO 3166-1 alpha-2 code
   north_american_iso_codes = %w(
     AS AI AG BS BB BM VG CA KY DM DO GD GU JM MS MP PR KN LC VC SX TT TC US VI
@@ -147,4 +143,19 @@ lambda do
   assert ItuCodes.itu2iso('77'), :== => 'KZ'
 
   assert ItuCodes.itu2iso('7'), :== => ['KZ', 'RU']
+
+  assert ItuCodes.itu2iso('88'), :== => nil
+end.call
+
+lambda do
+  # data should be up to date
+  assert ItuCodes.find_by_itu_code('382'), :== => 'Montenegro (Republic of)'
+  assert ItuCodes.iso2itu('ME'), :== => '382'
+
+  assert ItuCodes.find_by_itu_code('246'), :== => "Diego Garcia"
+  assert ItuCodes.iso2itu('DG'), :== => "246"
+
+  assert ItuCodes.find_by_itu_code('672'), :== => "Australian External Territories"
+  assert ItuCodes.iso2itu('NF'), :== => "672"
+  assert ItuCodes.itu2iso('672'), :== => ["CC", "CX", "HM", "NF"]
 end.call

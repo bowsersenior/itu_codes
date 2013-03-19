@@ -8,18 +8,21 @@ module ItuCodes
     def country_for(number)
       parsed = parse_code(number)
 
-      if north_american?(parsed)
-        matching_countries = north_american_codes.select do |k, v|
+      return if parsed.nil?
+      
+      matching_countries = if north_american?(parsed)
+        north_american_codes.select do |k, v|
           v.any? do |na_area_code|
             na_area_code =~ /^#{number[0,4]}/
           end
         end.keys
       elsif eurasian?(parsed)
-        matching_countries = []
-        matching_countries << "Kazakhstan (Republic of)" if kazakh?(number[0,2])
-        matching_countries << "Russian Federation" if russian?(number[0,2])
+        temp = []
+        temp << "Kazakhstan (Republic of)" if kazakh?(number[0,2])
+        temp << "Russian Federation" if russian?(number[0,2])
+        temp
       else
-        matching_countries = country_codes[parsed]
+        country_codes[parsed]
       end
 
       if matching_countries.is_a?(Array) && matching_countries.length === 1
@@ -66,8 +69,9 @@ module ItuCodes
       find_by_name(country_name)
     end
 
-    def itu2iso(itu)
-      name = country_for(itu)
+    # number is a full or partial number
+    def itu2iso(number)
+      name = country_for(number)
 
       if name.is_a?(String)
         Helpers.country_code_lookup(name)
