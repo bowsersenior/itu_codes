@@ -67,13 +67,23 @@ end.call
 
 lambda do
   # test should deal gracefully with North America
-  assert ItuCodes.find_by_itu_code('1684'), :== => "American Samoa"
-  assert ItuCodes.find_by_itu_code('1250'), :== => "Canada"
-  assert ItuCodes.find_by_itu_code('1818'), :== => "United States of America"
+  assert ItuCodes.country_for('1684'), :== => "American Samoa"
+  assert ItuCodes.country_for('1250'), :== => "Canada"
+  assert ItuCodes.country_for('1818'), :== => "United States of America"
 
-  assert ItuCodes.find_by_itu_code('1'), :include? => "United States of America"
-  assert ItuCodes.find_by_itu_code('1'), :include? => "Canada"
-  assert ItuCodes.find_by_itu_code('1'), :include? => "American Samoa"
+  assert ItuCodes.country_for('1'), :include? => "United States of America"
+  assert ItuCodes.country_for('1'), :include? => "Canada"
+  assert ItuCodes.country_for('1'), :include? => "American Samoa"
+end.call
+
+lambda do
+  # test should deal gracefully with Russia and Kazakhstan
+  assert ItuCodes.country_for('7'), :== => ["Kazakhstan (Republic of)", "Russian Federation"]
+
+  assert ItuCodes.country_for('75'), :== => "Russian Federation"
+
+  assert ItuCodes.country_for('76'), :== => "Kazakhstan (Republic of)"
+  assert ItuCodes.country_for('77'), :== => "Kazakhstan (Republic of)"
 end.call
 
 lambda do
@@ -123,7 +133,13 @@ lambda do
   )
 
   assert ItuCodes.itu2iso('1'), :== => north_american_iso_codes
+  assert ItuCodes.itu2iso('1818'), :== => 'US'
   assert ItuCodes.itu2iso('280'), :== => nil
   assert ItuCodes.itu2iso('52'), :== => 'MX'
+
+  assert ItuCodes.itu2iso('75'), :== => 'RU'
+  assert ItuCodes.itu2iso('76'), :== => 'KZ'
+  assert ItuCodes.itu2iso('77'), :== => 'KZ'
+
   assert ItuCodes.itu2iso('7'), :== => ['KZ', 'RU']
 end.call

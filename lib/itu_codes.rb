@@ -1,24 +1,49 @@
-# to-do: deal with headache codes:
-# 1 --> Non-US need to be separated by area code
-# 7 --> Kazakhstan!
-
 require 'itu_codes/constants'
 require 'itu_codes/helpers'
 
-# TODO: add ability to search for common names (i.e. 'USA' or 'United States of America' for 'United States')
-
 module ItuCodes
   class << self
-    def find_by_itu_code(code)
-      returner = lookup(code)
 
-      if returner.size <= 1
-        returner.first
+    # number is a full or partial number
+    def country_for(number)
+      parsed = parse_code(number)
+
+      if north_american?(parsed)
+        matching_countries = north_american_codes.select do |k, v|
+          v.any? do |na_area_code|
+            na_area_code =~ /^#{number[0,4]}/
+          end
+        end.keys
+      elsif eurasian?(parsed)
+        matching_countries = []
+        matching_countries << "Kazakhstan (Republic of)" if kazakh?(number[0,2])
+        matching_countries << "Russian Federation" if russian?(number[0,2])
       else
-        returner
+        matching_countries = country_codes[parsed]
+      end
+
+      if matching_countries.is_a?(Array) && matching_countries.length === 1
+        matching_countries.first
+      else
+        matching_countries
       end
     end
 
+    # Must pass a valid ITU code
+    def find_by_itu_code(code)
+      if valid_code?(code)
+        returner = country_for(code)
+
+        if returner.size <= 1
+          returner.first
+        else
+          returner
+        end
+      end
+    end
+
+    # Passed name must match exact name specified in ITU spec
+    # see: lib/data/assigned_country_codes.yml
     def find_by_name(name)
       matching = country_codes.select do |k, v|
         [*v].include? name
@@ -33,8 +58,8 @@ module ItuCodes
       end
     end
 
-    # lookup by ISO 3166 country code
-    # e.g. iso2itu('US')
+    # lookup by ISO 3166 alpha-2 country code
+    # e.g. find_by_iso_code('US')
     # see : http://www.iso.org/iso/country_codes.htm
     def iso2itu(iso_code)
       country_name = Helpers.country_name_lookup(iso_code)
@@ -42,7 +67,7 @@ module ItuCodes
     end
 
     def itu2iso(itu)
-      name = find_by_itu_code(itu)
+      name = country_for(itu)
 
       if name.is_a?(String)
         Helpers.country_code_lookup(name)
@@ -60,10 +85,6 @@ module ItuCodes
       country_codes.has_key?(some_code)
     end
 
-    def north_american?(some_code)
-      some_code[0,1] == '1'
-    end
-
     # parse a destination code (probably with area code) to find the ITU code
     #   ex:  parse_code(1818) =>  1
     def parse_code(some_number)
@@ -78,33 +99,60 @@ module ItuCodes
     #   ex:  parse_number(18184443322) => 8184443322
     def parse_number(some_number)
       country_code = parse_code(some_number)
-      some_number.gsub(/^#{country_code}/) unless country_code.nil?
+      some_number[country_code.length,some_number.length] unless country_code.nil?
     end
 
     def compatriots?(some, other)
-      both_valid = ! ( parse_code(some).nil? or parse_code(other).nil? )
+      both_valid = ! ( parse_code(some).nil? || parse_code(other).nil? )
 
       if north_american?(some) && north_american?(other)
-        both_valid && !(lookup(some) & lookup(other)).empty?
+        both_valid && !([*country_for(some)] & [*country_for(other)]).empty?
       else
         some  = parse_code(some)
         other = parse_code(other)
-        both_valid && lookup(some) == lookup(other)
+        both_valid && some === other
       end
     end
 
+    def north_american?(some_code)
+      some_code[0,1] == '1'
+    end
+
+    def eurasian?(some_code)
+      some_code[0,1] == '7'
+    end
+
     def american?(some_code)
-      # for non-US North American codes, parse_code will return a 4 digit code
-      # for US, '1' will be returned
-      countries = lookup(some_code[0,4]) || []
-      countries.include?('United States of America')
+      [* country_for(some_code) ].include?('United States of America')
     end
 
     def canadian?(some_code)
-      countries = lookup(some_code[0,4])
-      north_american?(some_code) && (countries.include?('Canada'))
+      [* country_for(some_code) ].include?('Canada')
     end
 
+    # Russian codes start with 7
+    # and are not codes defined for Kazakhstan
+    def russian?(some_code)
+      if some_code.length < 2
+        eurasian?(some_code)
+      else
+        eurasian?(some_code) && !kazakh?(some_code)
+      end
+    end
+
+    # Kazakhstan country code will start with either 76 or 77
+    # see: http://www.itu.int/oth/T020200006F/en
+    #      http://www.itu.int/dms_pub/itu-t/oth/02/02/T020200006F0001PDFE.pdf
+    # NOTE: apparently, some numbers are still jointly used by Kazakhstan and Russia
+    #       7000-0009, 7100-7199, 7200-7299, 7800-7809, 7881-7899
+    #       ItuCodes reports these as Russian codes for the time being
+    def kazakh?(some_code)
+      if some_code.length < 2
+        eurasian?(some_code)
+      else
+        %(77 76).include?(some_code[0,2])
+      end
+    end
 
     private
 
@@ -112,19 +160,12 @@ module ItuCodes
       Constants::NORTH_AMERICAN_AREA_CODES
     end
 
-    def country_codes
-      Constants::ASSIGNED_COUNTRY_CODES
+    def eurasian_codes
+      Constants::NORTH_AMERICAN_AREA_CODES
     end
 
-    def lookup(code)
-      cleaned = clean(code)
-      matching_countries = country_codes[cleaned] || []
-
-      matching_north_americans = north_american_codes.select do |k, v|
-        [*v].include?(code)
-      end || {}
-
-      [*matching_countries] + matching_north_americans.keys.compact
+    def country_codes
+      Constants::ASSIGNED_COUNTRY_CODES
     end
 
     # converts input to string, then strips any non-numeric characters

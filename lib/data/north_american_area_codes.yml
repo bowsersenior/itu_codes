@@ -4,6 +4,90 @@
 #   * http://www.itu.int/pub/T-SP-E.164D-11-2011
 #   * vendor/itu/T-SP-E.164D-11-2011-PDF-E.pdf
 
+American Samoa:
+  - '1684'
+Anguilla:
+  - '1264'
+Antigua and Barbuda:
+  - '1268'
+Bahamas (Commonwealth of the):
+  - '1242'
+Barbados:
+  - '1246'
+Bermuda:
+  - '1441'
+British Virgin Islands:
+  - '1284'
+Canada:
+  - '1204'
+  - '1226'
+  - '1236'
+  - '1249'
+  - '1250'
+  - '1289'
+  - '1306'
+  - '1343'
+  - '1365'
+  - '1403'
+  - '1416'
+  - '1418'
+  - '1431'
+  - '1437'
+  - '1438'
+  - '1450'
+  - '1506'
+  - '1514'
+  - '1519'
+  - '1579'
+  - '1581'
+  - '1587'
+  - '1604'
+  - '1613'
+  - '1639'
+  - '1647'
+  - '1705'
+  - '1709'
+  - '1778'
+  - '1780'
+  - '1807'
+  - '1819'
+  - '1867'
+  - '1873'
+  - '1902'
+  - '1905'
+Cayman Islands:
+  - '1345'
+Dominica (Commonwealth of):
+  - '1767'
+Dominican Republic:
+  - '1809'
+  - '1829'
+  - '1849'
+Grenada:
+  - '1473'
+Guam:
+  - '1671'
+Jamaica:
+  - '1876'
+Montserrat:
+  - '1664'
+Northern Mariana Islands (Commonwealth of the):
+  - '1670'
+Puerto Rico:
+  - '1787'
+  - '1939'
+Saint Kitts and Nevis:
+  - '1869'
+Saint Lucia:
+  - '1758'
+Saint Vincent and the Grenadines:
+  - '1784'
+Sint Maarten (Dutch part):
+  - '1721'
+Trinidad and Tobago:
+  - '1868'
+Turks and Caicos Islands:
+  - '1649'
 United States of America:
   - '1201'
   - '1202'
@@ -328,67 +412,5 @@ United States of America:
   - '1984'
   - '1985'
   - '1989'
-Canada:
-  - '1204'
-  - '1226'
-  - '1236'
-  - '1249'
-  - '1250'
-  - '1289'
-  - '1306'
-  - '1343'
-  - '1365'
-  - '1403'
-  - '1416'
-  - '1418'
-  - '1431'
-  - '1437'
-  - '1438'
-  - '1450'
-  - '1506'
-  - '1514'
-  - '1519'
-  - '1579'
-  - '1581'
-  - '1587'
-  - '1604'
-  - '1613'
-  - '1639'
-  - '1647'
-  - '1705'
-  - '1709'
-  - '1778'
-  - '1780'
-  - '1807'
-  - '1819'
-  - '1867'
-  - '1873'
-  - '1902'
-  - '1905'
-American Samoa: '1684'
-Anguilla: '1264'
-Antigua and Barbuda: '1268'
-Bahamas: '1242'
-Barbados: '1246'
-Bermuda: '1441'
-British Virgin Islands: '1284'
-Cayman Islands: '1345'
-Dominica: '1767'
-Dominican Republic:
-  - '1809'
-  - '1829'
-  - '1849'
-Grenada: '1473'
-Guam: '1671'
-Jamaica: '1876'
-Montserrat: '1664'
-Northern Mariana Islands: '1670'
-Puerto Rico:
-  - '1787'
-  - '1939'
-Saint Kitts and Nevis: '1869'
-Saint Lucia: '1758'
-Saint Vincent and the Grenadines: '1784'
-Trinidad and Tobago: '1868'
-Turks and Caicos Islands: '1649'
-United States Virgin Islands: '1340'
+United States Virgin Islands:
+  - '1340'
