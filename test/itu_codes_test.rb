@@ -63,6 +63,11 @@ lambda do
 
   assert ItuCodes.compatriots?('822', '811'), :!= => true
   assert ItuCodes.compatriots?('1984', '1985'), :== => true
+
+  assert ItuCodes.compatriots?('7', '75'), :== => true
+  assert ItuCodes.compatriots?('7', '76'), :== => true
+  assert ItuCodes.compatriots?('76', '77'), :== => true
+  assert ItuCodes.compatriots?('75', '77'), :== => false
 end.call
 
 lambda do

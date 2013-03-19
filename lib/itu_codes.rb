@@ -107,6 +107,8 @@ module ItuCodes
 
       if north_american?(some) && north_american?(other)
         both_valid && !([*country_for(some)] & [*country_for(other)]).empty?
+      elsif eurasian?(some) && eurasian?(other)
+        both_valid && !([*country_for(some)] & [*country_for(other)]).empty?
       else
         some  = parse_code(some)
         other = parse_code(other)
