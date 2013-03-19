@@ -22,96 +22,96 @@ Some complicating factors when dealing with calling codes:
 
 ```ruby
 
-    # The following methods are provided:
+# The following methods are provided:
 
-    # ItuCodes.country_for(full_or_partial_number)
-    # ItuCodes.find_by_itu_code(code)
-    # ItuCodes.find_by_name(country_name)
-    # ItuCodes.valid_code?(exact_itu_code)
-    # ItuCodes.parse_code(full_or_partial_number)
-    # ItuCodes.parse_number(full_or_partial_number)
-    # ItuCodes.iso2itu(iso_2_letter_country_code)
-    # ItuCodes.itu2iso(exact_itu_code)
-    # ItuCodes.compatriots?(full_or_partial_number1, full_or_partial_number2)
+# ItuCodes.country_for(full_or_partial_number)
+# ItuCodes.find_by_itu_code(code)
+# ItuCodes.find_by_name(country_name)
+# ItuCodes.valid_code?(exact_itu_code)
+# ItuCodes.parse_code(full_or_partial_number)
+# ItuCodes.parse_number(full_or_partial_number)
+# ItuCodes.iso2itu(iso_2_letter_country_code)
+# ItuCodes.itu2iso(exact_itu_code)
+# ItuCodes.compatriots?(full_or_partial_number1, full_or_partial_number2)
 
 
-    # Examples
+# Examples
 
-    # Any full or partial number will work
-    ItuCodes.country_for('33')
-    # => "France"
+# Any full or partial number will work
+ItuCodes.country_for('33')
+# => "France"
 
-    # Country names are returned EXACTLY as specified in ITU E.164 document
-    ItuCodes.country_for('18184442222')
-    # => "United States of America"
+# Country names are returned EXACTLY as specified in ITU E.164 document
+ItuCodes.country_for('18184442222')
+# => "United States of America"
 
-    ItuCodes.country_for('7')
-    # => [ "Kazakhstan (Republic of)", "Russian Federation" ]
+ItuCodes.country_for('7')
+# => [ "Kazakhstan (Republic of)", "Russian Federation" ]
 
-    ItuCodes.find_by_itu_code '995'
-    # => "Georgia"
+ItuCodes.find_by_itu_code '995'
+# => "Georgia"
 
-    ItuCodes.find_by_itu_code '123123995'
-    # => nil
+ItuCodes.find_by_itu_code '123123995'
+# => nil
 
-    # Name should match EXACTLY as specified in ITU E.164 document
-    # ItuCodes.iso2itu accepts 2 letter ISO 3166 codes
-    ItuCodes.find_by_name 'France'
-    # => "33"
+# Name should match EXACTLY as specified in ITU E.164 document
+# ItuCodes.iso2itu accepts 2 letter ISO 3166 codes
+ItuCodes.find_by_name 'France'
+# => "33"
 
-    ItuCodes.find_by_name 'Erewhon'
-    # => nil
+ItuCodes.find_by_name 'Erewhon'
+# => nil
 
-    ItuCodes.valid_code? '8392813'
-    # => false
+ItuCodes.valid_code? '8392813'
+# => false
 
-    ItuCodes.valid_code? '7'
-    # => true
+ItuCodes.valid_code? '7'
+# => true
 
-    ItuCodes.parse_code '18185558888'
-    # => 1
+ItuCodes.parse_code '18185558888'
+# => 1
 
-    ItuCodes.parse_code '822'
-    # => "82"
+ItuCodes.parse_code '822'
+# => "82"
 
-    ItuCodes.parse_code '4'
-    # => nil
+ItuCodes.parse_code '4'
+# => nil
 
-    ItuCodes.parse_number '18185558888'
-    # => "8185558888"
+ItuCodes.parse_number '18185558888'
+# => "8185558888"
 
-    # Convert from and to ISO 2-letter country codes:
-    ItuCodes.iso2itu('US')
-    # => "1"
+# Convert from and to ISO 2-letter country codes:
+ItuCodes.iso2itu('US')
+# => "1"
 
-    # Convert from and to ISO 2-letter country codes:
-    ItuCodes.itu2iso('1')
-    # => ["AS", "AI", "AG", "BS", "BB", "BM", "VG", "CA", "KY", "DM", "DO", "GD", "GU", "JM", "MS", "MP", "PR", "KN", "LC", "VC", "SX", "TT", "TC", "US", "VI"]
+# Convert from and to ISO 2-letter country codes:
+ItuCodes.itu2iso('1')
+# => ["AS", "AI", "AG", "BS", "BB", "BM", "VG", "CA", "KY", "DM", "DO", "GD", "GU", "JM", "MS", "MP", "PR", "KN", "LC", "VC", "SX", "TT", "TC", "US", "VI"]
 
-    # Mexico
-    # ISO 3361 code : MX
-    # ITU code      : 52
-    ItuCodes.iso2itu('MX')
-    # => "52"
+# Mexico
+# ISO 3361 code : MX
+# ITU code      : 52
+ItuCodes.iso2itu('MX')
+# => "52"
 
-    ItuCodes.itu2iso('52')
-    # => "MX"
+ItuCodes.itu2iso('52')
+# => "MX"
 
-    # Despite the same 1st digit,
-    # these are for different
-    # countries ...
-    ItuCodes.compatriots? '822', '811'
-    # => false
+# Despite the same 1st digit,
+# these are for different
+# countries ...
+ItuCodes.compatriots? '822', '811'
+# => false
 
-    # ... but these are for
-    # the same country ...
-    ItuCodes.compatriots? '1984', '1985'
-    # => true
+# ... but these are for
+# the same country ...
+ItuCodes.compatriots? '1984', '1985'
+# => true
 
-    # ... and then there's the
-    # North American 'situation' ...
-    ItuCodes.compatriots? '1264', '1818'
-    # => false
+# ... and then there's the
+# North American 'situation' ...
+ItuCodes.compatriots? '1264', '1818'
+# => false
 
 ```
 
