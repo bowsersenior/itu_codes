@@ -16,6 +16,8 @@ Some complicating factors when dealing with calling codes:
 * Russia and Kazakhstan share the ITU code '7'.
 * The ITU does not use ISO 3166 alpha-2 codes to specify countries or regions in its documents.
 * In general, each ITU code corresponds to exactly one ISO 3166 code. However, there are exceptions. For examples, the Australian External Territories have a single ITU code of '672', but have 4 distinct ISO 3166 codes (CC, CX, HM, NF).
+
+
 ## Usage:
 
 ```ruby
