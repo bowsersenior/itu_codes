@@ -9,10 +9,10 @@ Country code lookup based on official ISO-3166-1 specifications:
 * [Country Codes - ISO 3166][3]
 * [list of alpha-2 country codes in XML format][4]
 
-The main goal of this library is to closely match the latest official specifications from the ITU and the ISO relating to callign codes. If you find any discrepancies in the data, please let me know!
+The main goal of this library is to closely match the latest official specifications from the [ITU][5], [ISO][6], [NANPA][7] and other governing bodies relating to calling codes. If you find any discrepancies in the data, please let me know!
 
 Some complicating factors when dealing with calling codes:
-* In North America, 25 countries and territories follow the [North American Numbering Plan][5] and share the ITU code '1'.
+* In North America, 25 countries and territories follow the [North American Numbering Plan][7] and share the ITU code '1'.
 * Russia and Kazakhstan share the ITU code '7'.
 * The ITU does not use ISO 3166 alpha-2 codes to specify countries or regions in its documents.
 * In general, each ITU code corresponds to exactly one ISO 3166 code. However, there are exceptions. For examples, the Australian External Territories have a single ITU code of '672', but have 4 distinct ISO 3166 codes (CC, CX, HM, NF).
@@ -119,4 +119,6 @@ ItuCodes.compatriots? '1264', '1818'
 [2]: http://www.itu.int/dms_pub/itu-t/opb/sp/T-SP-E.164D-11-2011-PDF-E.pdf
 [3]: http://www.iso.org/iso/home/standards/country_codes
 [4]: http://www.iso.org/iso/home/standards/country_codes/country_names_and_code_elements_xml
-[5]: http://www.nanpa.com
+[5]: http://www.itu.int
+[6]: http://www.iso.org
+[7]: http://www.nanpa.com
