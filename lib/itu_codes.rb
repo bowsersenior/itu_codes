@@ -99,6 +99,24 @@ module ItuCodes
       some_number[0,sub_index] unless sub_index.nil?
     end
 
+    # parse a north american full number and return the area code
+    # returns nil if the number is not north american
+    # return 1, if can't find an area code in Constants::NORTH_AMERICAN_AREA_CODES
+    #  ex:   north_american_area_code_for("1-264-9568543") => 1264
+    def north_american_area_code_for(some_number)
+      some_number = clean(some_number)
+
+      itu_code  = parse_code(some_number)
+
+      return nil if itu_code.nil? || !north_american?(itu_code)
+
+      code = itu_code
+
+      north_american_codes.each { |_, v| code = some_number[0,4] if v.include?(some_number[0,4]) }
+
+      return code
+    end
+
     # parse a destination code (probably with area code) to find the number without the ITU code
     #   ex:  parse_number(18184443322) => 8184443322
     def parse_number(some_number)
