@@ -102,6 +102,7 @@ module ItuCodes
     # parse a destination code (probably with area code) to find the number without the ITU code
     #   ex:  parse_number(18184443322) => 8184443322
     def parse_number(some_number)
+      some_number = clean(some_number)
       country_code = parse_code(some_number)
       some_number[country_code.length,some_number.length] unless country_code.nil?
     end

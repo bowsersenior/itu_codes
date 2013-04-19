@@ -43,6 +43,21 @@ lambda do
 end.call
 
 lambda do
+  #test parse full number with invalid characters
+  american  =    "1"
+  only_characters = american+"abdcedfgh"
+  characters_and_numbers = american+"abdefg301h33i11j871"
+  symbol_characters = american+'%$#.#@*-_,'
+  symbol_characters_and_numbers = american+'-*&.$301-331-1871'
+
+  assert ItuCodes.parse_number(only_characters), :== => ""
+  assert ItuCodes.parse_number(symbol_characters), :== => ""
+  assert ItuCodes.parse_number(characters_and_numbers), :== => "3013311871"
+  assert ItuCodes.parse_number(symbol_characters_and_numbers), :== => "3013311871"
+
+end.call
+
+lambda do
   # test compatriot phone numbers should be detected
   american  =    "1"
   newyorker = "1212"
