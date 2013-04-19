@@ -123,7 +123,7 @@ ItuCodes.compatriots? '1264', '1818'
 # => false
 
 # parse the area code for North American numbers:
-ItuCodes.north_american_area_code_for '18185551234
+ItuCodes.north_american_area_code_for '18185551234'
 # => '1818'
 
 # returns nil if the passed number is not North American
