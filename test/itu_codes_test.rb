@@ -58,6 +58,25 @@ lambda do
 end.call
 
 lambda do
+  #test north_american_area_code_for
+  usa_code_1    =  "1201"
+  usa_code_2    =  "1240-30476563"
+  canada_code_1 =  "1204"
+  canada_code_2 =  "1450-89909876"
+  anguilla_1    =  "1264"
+  anguilla_2    =  "1-264-9568543"
+
+  assert ItuCodes.north_american_area_code_for(usa_code_1),    :== => "1201"
+  assert ItuCodes.north_american_area_code_for(usa_code_2),    :== => "1240"
+  assert ItuCodes.north_american_area_code_for(canada_code_1), :== => "1204"
+  assert ItuCodes.north_american_area_code_for(canada_code_2), :== => "1450"
+  assert ItuCodes.north_american_area_code_for(anguilla_1),    :== => "1264"
+  assert ItuCodes.north_american_area_code_for(anguilla_2),    :== => "1264"
+
+
+end.call
+
+lambda do
   # test compatriot phone numbers should be detected
   american  =    "1"
   newyorker = "1212"
