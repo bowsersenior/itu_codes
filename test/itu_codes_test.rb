@@ -54,7 +54,6 @@ lambda do
   assert ItuCodes.parse_number(symbol_characters), :== => ""
   assert ItuCodes.parse_number(characters_and_numbers), :== => "3013311871"
   assert ItuCodes.parse_number(symbol_characters_and_numbers), :== => "3013311871"
-
 end.call
 
 lambda do
@@ -65,6 +64,7 @@ lambda do
   canada_code_2 =  "1450-89909876"
   anguilla_1    =  "1264"
   anguilla_2    =  "1-264-9568543"
+  french        = "3344556688"
 
   assert ItuCodes.north_american_area_code_for(usa_code_1),    :== => "1201"
   assert ItuCodes.north_american_area_code_for(usa_code_2),    :== => "1240"
@@ -72,8 +72,7 @@ lambda do
   assert ItuCodes.north_american_area_code_for(canada_code_2), :== => "1450"
   assert ItuCodes.north_american_area_code_for(anguilla_1),    :== => "1264"
   assert ItuCodes.north_american_area_code_for(anguilla_2),    :== => "1264"
-
-
+  assert ItuCodes.north_american_area_code_for(french),        :== => nil
 end.call
 
 lambda do
@@ -104,7 +103,7 @@ lambda do
   assert ItuCodes.compatriots?('75', '77'), :== => false
 end.call
 
-lambda do 
+lambda do
   # country_for should return the country name(s) or nil
   assert ItuCodes.country_for('33'), :== => "France"
   assert ItuCodes.country_for('88'), :== => nil

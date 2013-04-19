@@ -33,7 +33,7 @@ Some complicating factors when dealing with calling codes:
 # ItuCodes.iso2itu(iso_2_letter_country_code)
 # ItuCodes.itu2iso(exact_itu_code)
 # ItuCodes.compatriots?(full_or_partial_number1, full_or_partial_number2)
-
+# ItuCodes.north_american_area_code_for
 
 # Examples
 
@@ -71,13 +71,22 @@ ItuCodes.valid_code? '7'
 ItuCodes.parse_code '18185558888'
 # => 1
 
+# non-numeric characters are ignored
+ItuCodes.parse_code '1 (818) 555-8888'
+# => "1"
+
 ItuCodes.parse_code '822'
 # => "82"
 
 ItuCodes.parse_code '4'
 # => nil
 
+
 ItuCodes.parse_number '18185558888'
+# => "8185558888"
+
+# non-numeric characters are ignored
+ItuCodes.parse_number '1 (818) 555-8888'
 # => "8185558888"
 
 # Convert from and to ISO 2-letter country codes:
@@ -113,6 +122,13 @@ ItuCodes.compatriots? '1984', '1985'
 ItuCodes.compatriots? '1264', '1818'
 # => false
 
+# parse the area code for North American numbers:
+ItuCodes.north_american_area_code_for '18185551234
+# => '1818'
+
+# returns nil if the passed number is not North American
+ItuCodes.north_american_area_code_for '332233'
+# => nil
 ```
 
 [1]: http://www.itu.int/pub/T-SP-E.164D-11-2011
