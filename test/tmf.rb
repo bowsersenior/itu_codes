@@ -28,6 +28,7 @@ module TMF
   end
 
   def assert(a, opts={})
+    # support plain assertions, e.g. : assert(true)
     opts = {:== => true} if opts == {}
 
     opts.each do |meth, val|
