@@ -10,5 +10,6 @@ task :test do
     system(command)
     color = $?.success? ? "\e[32m" : "\e[31m"
     puts("#{color}#{test_file}\e[0m")
+    exit $?.success?
   end
 end
