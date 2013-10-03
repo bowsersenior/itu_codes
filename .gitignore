@@ -6,3 +6,4 @@ tmp/*
 Gemfile.lock
 .rvmrc
 .rbenv*
+.ruby*
