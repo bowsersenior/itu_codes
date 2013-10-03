@@ -27,7 +27,9 @@ module TMF
     end
   end
 
-  def assert(a, opts)
+  def assert(a, opts={})
+    opts = {:== => true} if opts == {}
+
     opts.each do |meth, val|
       a.send(meth, val) || raise( ExpectationNotMet.new(a, meth, val) )
     end && true
