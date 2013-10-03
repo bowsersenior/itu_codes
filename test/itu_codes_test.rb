@@ -12,10 +12,10 @@ lambda do
   assert ItuCodes.valid_code?(american), :== => true
   assert ItuCodes.valid_code?(russian), :== => true
 
-  assert ItuCodes.valid_code?(newyorker), :!= => true     # 1212 is not a country code!
-  assert ItuCodes.valid_code?(canadian), :!= => true
-  assert ItuCodes.valid_code?(samoan), :!= => true
-  assert ItuCodes.valid_code?(alien), :!= => true
+  assert ItuCodes.valid_code?(newyorker), :== => false     # 1212 is not a country code!
+  assert ItuCodes.valid_code?(canadian), :== => false
+  assert ItuCodes.valid_code?(samoan), :== => false
+  assert ItuCodes.valid_code?(alien), :== => false
 end.call
 
 lambda do
@@ -26,18 +26,16 @@ lambda do
   italian   =   "39"
   alien     = "alksjlkknm"
 
-  assert american,
-    :== => ItuCodes.parse_code(american),
-    :== => ItuCodes.parse_code(newyorker)
+  assert american, :== => ItuCodes.parse_code(american)
+  assert american, :== => ItuCodes.parse_code(newyorker)
 
-  assert russian,
-    :!= => ItuCodes.parse_code(newyorker),
-    :!= => ItuCodes.parse_code(alien)
+  assert russian != ItuCodes.parse_code(newyorker)
+  assert russian != ItuCodes.parse_code(alien)
 
   assert italian,
     :== => ItuCodes.parse_code(italian)
 
-  assert alien, :!= => ItuCodes.parse_code(alien)
+  assert alien != ItuCodes.parse_code(alien)
 
   assert nil, :== => ItuCodes.parse_code(alien)
 end.call
@@ -87,14 +85,14 @@ lambda do
   assert ItuCodes.compatriots?(newyorker, angeleno), :== => true
   assert ItuCodes.compatriots?(newyorker, american), :== => true
 
-  assert ItuCodes.compatriots?(newyorker, russian), :!= => true
-  assert ItuCodes.compatriots?(american, russian), :!= => true
-  assert ItuCodes.compatriots?(newyorker, anguilan), :!= => true
+  assert ItuCodes.compatriots?(newyorker, russian), :== => false
+  assert ItuCodes.compatriots?(american, russian), :== => false
+  assert ItuCodes.compatriots?(newyorker, anguilan), :== => false
 
-  assert ItuCodes.compatriots?(american, alien), :!= => true
-  assert ItuCodes.compatriots?(alien, alien), :!= => true
+  assert ItuCodes.compatriots?(american, alien), :== => false
+  assert ItuCodes.compatriots?(alien, alien), :== => false
 
-  assert ItuCodes.compatriots?('822', '811'), :!= => true
+  assert ItuCodes.compatriots?('822', '811'), :== => false
   assert ItuCodes.compatriots?('1984', '1985'), :== => true
 
   assert ItuCodes.compatriots?('7', '75'), :== => true
@@ -147,9 +145,9 @@ lambda do
     :american? => newyorker,
     :american? => n2
 
-  assert ItuCodes.american?(canadian), :!= => true
-  assert ItuCodes.american?(samoan), :!= => true
-  assert ItuCodes.american?(russian), :!= => true
+  assert ItuCodes.american?(canadian), :== => false
+  assert ItuCodes.american?(samoan), :== => false
+  assert ItuCodes.american?(russian), :== => false
 end.call
 
 lambda do
@@ -164,9 +162,9 @@ lambda do
   # convert from ITU code to ISO 3166-1 alpha-2 code
   north_american_iso_codes = %w(
     AS AI AG BS BB BM VG CA KY DM DO GD GU JM MS MP PR KN LC VC SX TT TC US VI
-  )
+  ).sort
 
-  assert ItuCodes.itu2iso('1'), :== => north_american_iso_codes
+  assert ItuCodes.itu2iso('1').sort, :== => north_american_iso_codes
   assert ItuCodes.itu2iso('1818'), :== => 'US'
   assert ItuCodes.itu2iso('280'), :== => nil
   assert ItuCodes.itu2iso('52'), :== => 'MX'
@@ -190,5 +188,8 @@ lambda do
 
   assert ItuCodes.find_by_itu_code('672'), :== => "Australian External Territories"
   assert ItuCodes.iso2itu('NF'), :== => "672"
-  assert ItuCodes.itu2iso('672'), :== => ["CC", "CX", "HM", "NF"]
+  assert ItuCodes.itu2iso('672').sort, :== => ["CC", "CX", "HM", "NF"]
+
+  assert ItuCodes.find_by_name("Australian External Territories"),
+         :== => "672"
 end.call

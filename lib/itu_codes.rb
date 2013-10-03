@@ -9,13 +9,16 @@ module ItuCodes
       parsed = parse_code(number)
 
       return if parsed.nil?
-      
+
       matching_countries = if north_american?(parsed)
-        north_american_codes.select do |k, v|
+        hsh = north_american_codes.select do |k, v|
           v.any? do |na_area_code|
             na_area_code =~ /^#{number[0,4]}/
           end
-        end.keys
+        end
+
+        # ruby 1.8 support
+        ItuCodes::Helpers.keys_from_hash(hsh)
       elsif eurasian?(parsed)
         temp = []
         temp << "Kazakhstan (Republic of)" if kazakh?(number[0,2])
@@ -52,7 +55,8 @@ module ItuCodes
         [*v].include? name
       end || {}
 
-      returner = matching.keys
+      # ruby 1.8
+      returner = ItuCodes::Helpers.keys_from_hash(matching)
 
       if returner.size <= 1
         returner.first
