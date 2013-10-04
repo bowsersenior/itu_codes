@@ -13,6 +13,7 @@ Gem::Specification.new do |s|
   s.homepage    = "http://github.com/bowsersenior/itu_codes"
   s.summary     = "Helpers for dealing with world calling codes."
   s.description = "Helper library for telephone country codes based on the official International Telecommunications Union specifications."
+  s.license     = 'MIT'
 
   s.required_rubygems_version = ">= 1.3.7"
 
