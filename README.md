@@ -1,5 +1,11 @@
 # ItuCodes [![Build Status](https://secure.travis-ci.org/bowsersenior/itu_codes.png)](http://travis-ci.org/bowsersenior/itu_codes)
 
+## Notice
+
+Google recently released [libphonenumber][libphonenumber], a comprehensive database of country codes, which includes regional information and country-specific validation rules. There is a ruby gem that uses this database called [global_phone][global_phone]. You should consider these alternatives before you choose ItuCodes. ItuCodes and libphonenumber both use the [E.164][1] data provided by the International Telecommunications Union, however, Google's data includes more detailed regional information and is likely more up to date, given the resources Google has invested in this effort.
+
+## Overview
+
 Helper library for telephone country codes based on the official International Telecommunications Union specifications:
 
 * [List of ITU-T Recommendation E.164 assigned country codes][1]
@@ -138,3 +144,5 @@ ItuCodes.north_american_area_code_for '332233'
 [5]: http://www.itu.int
 [6]: http://www.iso.org
 [7]: http://www.nanpa.com
+[libphonenumber]: https://github.com/googlei18n/libphonenumber
+[global_phone]: https://github.com/sstephenson/global_phone
