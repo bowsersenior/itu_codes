@@ -1,4 +1,4 @@
-# ItuCodes [![Build Status](https://secure.travis-ci.org/bowsersenior/itu_codes.png)](http://travis-ci.org/bowsersenior/itu_codes)
+# ItuCodes [![Build Status](https://travis-ci.org/bowsersenior/itu_codes.svg?branch=master)](http://travis-ci.org/bowsersenior/itu_codes)
 
 ## Notice
 
