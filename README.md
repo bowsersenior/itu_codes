@@ -101,7 +101,33 @@ ItuCodes.iso2itu('US')
 
 # Convert from and to ISO 2-letter country codes:
 ItuCodes.itu2iso('1')
-# => ["AS", "AI", "AG", "BS", "BB", "BM", "VG", "CA", "KY", "DM", "DO", "GD", "GU", "JM", "MS", "MP", "PR", "KN", "LC", "VC", "SX", "TT", "TC", "US", "VI"]
+# => [
+  "AS", 
+  "AI", 
+  "AG", 
+  "BS", 
+  "BB", 
+  "BM", 
+  "VG", 
+  "CA", 
+  "KY", 
+  "DM", 
+  "DO", 
+  "GD", 
+  "GU", 
+  "JM", 
+  "MS", 
+  "MP", 
+  "PR", 
+  "KN", 
+  "LC", 
+  "VC", 
+  "SX", 
+  "TT", 
+  "TC", 
+  "US", 
+  "VI"
+]
 
 # Mexico
 # ISO 3361 code : MX
